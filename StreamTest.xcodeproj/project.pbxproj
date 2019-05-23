@@ -20,6 +20,8 @@
 		4667D0602293BD8A00B67877 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05C2293BD8A00B67877 /* TabBarViewController.swift */; };
 		4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */; };
 		4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */; };
+		4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9402295B4420064C026 /* StreamTabBar.swift */; };
+		4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9442295B4D20064C026 /* TabBarChildViewController.swift */; };
 		A232B5E37CB3FDAE79596DA1 /* Pods_StreamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		4667D05C2293BD8A00B67877 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		4680D9402295B4420064C026 /* StreamTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTabBar.swift; sourceTree = "<group>"; };
+		4680D9442295B4D20064C026 /* TabBarChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarChildViewController.swift; sourceTree = "<group>"; };
 		DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC35FA1CA54596746EE68FD /* Pods-StreamTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamTest.release.xcconfig"; path = "Target Support Files/Pods-StreamTest/Pods-StreamTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 		4667D03F22939BE900B67877 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4680D9432295B4B80064C026 /* Components */,
+				4680D9422295B4AD0064C026 /* Models */,
 				4667D0582293BC0E00B67877 /* Extensions */,
 			);
 			path = Helpers;
@@ -111,6 +117,7 @@
 		4667D04122939BFA00B67877 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				4680D93F2295B4190064C026 /* Subviews */,
 				4667D05B2293BD8A00B67877 /* TabBarRouter.swift */,
 				4667D05C2293BD8A00B67877 /* TabBarViewController.swift */,
 				4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */,
@@ -221,6 +228,29 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4680D93F2295B4190064C026 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4680D9402295B4420064C026 /* StreamTabBar.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		4680D9422295B4AD0064C026 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4680D9432295B4B80064C026 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4680D9442295B4D20064C026 /* TabBarChildViewController.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5E78D24717ACDA7818F86251 /* Frameworks */ = {
@@ -364,7 +394,9 @@
 				4667D0552293BA8300B67877 /* RootInteractor.swift in Sources */,
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
+				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
+				4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */,
 				4667D0572293BAB700B67877 /* AppComponent.swift in Sources */,
 				4667D0602293BD8A00B67877 /* TabBarViewController.swift in Sources */,
 				4667D0522293BA8300B67877 /* RootRouter.swift in Sources */,

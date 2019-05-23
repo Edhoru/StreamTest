@@ -28,22 +28,25 @@ final class TabBarViewController: UITabBarController, TabBarPresentable, TabBarV
     }
     
     private func setupUI() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .background
+        
+        tabBar.backgroundColor = .background
+        tabBar.isTranslucent = false
+        tabBar.barStyle = .blackOpaque
+        UITabBar.appearance().tintColor = .green
     }
     
     private func setupControllers() {
-        let streamViewController = UIViewController()
+        let streamViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_stream"))
         streamViewController.view.backgroundColor = .red
         
-        let searchViewController = UIViewController()
+        let searchViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_search"))
         searchViewController.view.backgroundColor = .green
         
-        let notificationsViewController = UIViewController()
+        let notificationsViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_notifications"))
         notificationsViewController.view.backgroundColor = .blue
-        let notificationsItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-        notificationsViewController.tabBarItem = notificationsItem
         
-        let profileViewController = UIViewController()
+        let profileViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_profile"))
         profileViewController.view.backgroundColor = .orange
         
         viewControllers = [streamViewController,
@@ -53,28 +56,29 @@ final class TabBarViewController: UITabBarController, TabBarPresentable, TabBarV
         
         tabBar.backgroundColor = .background
         
+        guard let tabBarChildren = children as? [TabBarChildViewController] else {
+            return
+        }
         
-        
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .background
-        
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 10, y: 10, width: 50, height: 150)
-        button.backgroundColor = .green
-        
-        
-        self.tabBar.addSubview(view)
-        view.addSubview(button)
+        let customTabBar = StreamTabBar(children: tabBarChildren)
+        customTabBar.delegate = self
+        view.addSubview(customTabBar)
         
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: tabBar.topAnchor),
-            view.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor),
+            customTabBar.topAnchor.constraint(equalTo: tabBar.topAnchor),
+            customTabBar.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
+            customTabBar.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
+            customTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             ])
     }
     
-    
 }
 
+
+extension TabBarViewController: StreamTabBarDelegate {
+    
+    func selected(tab: Int) {
+        selectedIndex = tab
+    }
+    
+}
