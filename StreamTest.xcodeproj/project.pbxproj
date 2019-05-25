@@ -32,6 +32,9 @@
 		466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */; };
 		466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */; };
 		466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */; };
+		466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A9229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift */; };
+		466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72AB229972FB00F3CC8A /* Suggestion.swift */; };
+		466C72AE2299753C00F3CC8A /* SuggestionsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */; };
 		4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9402295B4420064C026 /* StreamTabBar.swift */; };
 		4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9442295B4D20064C026 /* TabBarChildViewController.swift */; };
 		A232B5E37CB3FDAE79596DA1 /* Pods_StreamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */; };
@@ -66,6 +69,9 @@
 		466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsBuilder.swift; sourceTree = "<group>"; };
 		466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsInteractor.swift; sourceTree = "<group>"; };
+		466C72A9229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		466C72AB229972FB00F3CC8A /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsDataService.swift; sourceTree = "<group>"; };
 		4680D9402295B4420064C026 /* StreamTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTabBar.swift; sourceTree = "<group>"; };
 		4680D9442295B4D20064C026 /* TabBarChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarChildViewController.swift; sourceTree = "<group>"; };
 		DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +201,8 @@
 				466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */,
 				466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */,
 				466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */,
+				466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */,
+				466C72A8229971D000F3CC8A /* Subviews */,
 			);
 			path = Suggestions;
 			sourceTree = "<group>";
@@ -266,6 +274,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		466C72A8229971D000F3CC8A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				466C72A9229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		4680D93F2295B4190064C026 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +293,7 @@
 		4680D9422295B4AD0064C026 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				466C72AB229972FB00F3CC8A /* Suggestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,9 +449,11 @@
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
+				466C72AE2299753C00F3CC8A /* SuggestionsDataService.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
 				466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */,
 				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
+				466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */,
 				466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */,
 				466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */,
 				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
@@ -449,6 +468,7 @@
 				466C729C22995A2300F3CC8A /* BroadcastRouter.swift in Sources */,
 				466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */,
 				4667D0532293BA8300B67877 /* RootViewController.swift in Sources */,
+				466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */,
 				466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */,
 				4618709622938A9E008A2CD7 /* AppDelegate.swift in Sources */,
 				4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */,

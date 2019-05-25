@@ -16,6 +16,7 @@ protocol SuggestionsRouting: ViewableRouting {
 protocol SuggestionsPresentable: Presentable {
     var listener: SuggestionsPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func display(suggestions: [Suggestion])
 }
 
 protocol SuggestionsListener: class {
@@ -37,6 +38,13 @@ final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable>
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
+        SuggestionsDataService().get { (suggestions, error) in
+            guard error == nil else {
+                fatalError("there is an error when getting the suggestions")
+            }
+            
+            self.presenter.display(suggestions: suggestions)
+        }
     }
 
     override func willResignActive() {

@@ -48,10 +48,6 @@ final class StreamViewController: TabBarChildViewController, StreamPresentable {
         
         let safeArea = view.safeAreaLayoutGuide
         
-        let testview = UIView(frame: .zero)
-        testview.translatesAutoresizingMaskIntoConstraints = false
-        testview.backgroundColor = .purple
-        view.addSubview(testview)
         NSLayoutConstraint.activate([
             suggestionsContainer.heightAnchor.constraint(equalToConstant: 80),
             suggestionsContainer.topAnchor.constraint(equalTo: safeArea.topAnchor),
@@ -72,8 +68,28 @@ extension StreamViewController: StreamViewControllable {
     
     func displayChildren(_ suggestions: ViewControllable,
                          broadcast: ViewControllable) {
-        suggestionsContainer.addSubview(suggestions.uiviewController.view)
-        broadcastContainer.addSubview(broadcast.uiviewController.view)
+        guard let suggestionsView = suggestions.uiviewController.view,
+            let broadcastView = broadcast.uiviewController.view else {
+                return
+        }
+        
+        suggestionsView.translatesAutoresizingMaskIntoConstraints = false
+        broadcastView.translatesAutoresizingMaskIntoConstraints = false
+        
+        suggestionsContainer.addSubview(suggestionsView)
+        broadcastContainer.addSubview(broadcastView)
+        
+        NSLayoutConstraint.activate([
+            suggestionsView.topAnchor.constraint(equalTo: suggestionsContainer.topAnchor),
+            suggestionsView.leadingAnchor.constraint(equalTo: suggestionsContainer.leadingAnchor),
+            suggestionsView.trailingAnchor.constraint(equalTo: suggestionsContainer.trailingAnchor),
+            suggestionsView.bottomAnchor.constraint(equalTo: suggestionsContainer.bottomAnchor),
+            
+            broadcastView.topAnchor.constraint(equalTo: broadcastContainer.topAnchor),
+            broadcastView.leadingAnchor.constraint(equalTo: broadcastContainer.leadingAnchor),
+            broadcastView.trailingAnchor.constraint(equalTo: broadcastContainer.trailingAnchor),
+            broadcastView.bottomAnchor.constraint(equalTo: broadcastContainer.bottomAnchor)
+            ])
     }
     
 }
