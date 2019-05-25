@@ -42,16 +42,14 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
     private var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
+        label.styleCell()
         return label
     }()
     
     private var badgeView: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
-        label.textColor = .white
-        label.textAlignment = .center
+        label.styleBadge()
         label.layer.cornerRadius = Constants.badge / 2
         label.clipsToBounds = true
         return label
@@ -100,9 +98,9 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         stateCircleView.backgroundColor = suggestion.color
         avatarImageView.image = suggestion.avatar
         nameLabel.text = suggestion.name
-        nameLabel.textColor = suggestion.state == .off ? .gray : .white
+        nameLabel.textColor = suggestion.state == .off ? .darkGray : suggestion.state == .on ? .gray : .secondary
         badgeView.text = suggestion.state == .new ? "" : "\(suggestion.badge)"
-        badgeView.backgroundColor = suggestion.state == .new ? .white : .badge
+        badgeView.backgroundColor = suggestion.state == .new ? .secondary : .badge
         
         setStateView()
     }
@@ -143,7 +141,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         //On the other hand if the state is on we create the gradient
         //For both cases we need the animation
         if state == .new {
-            stateLayer.strokeColor = UIColor.white.cgColor
+            stateLayer.strokeColor = UIColor.secondary.cgColor
             stateCircleView.layer.addSublayer(stateLayer)
         } else {
             let gradientLayer = CAGradientLayer()
