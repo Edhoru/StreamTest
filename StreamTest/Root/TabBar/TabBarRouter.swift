@@ -43,10 +43,10 @@ final class TabBarRouter: ViewableRouter<TabBarInteractable, TabBarViewControlla
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
         
-        buildChildren()
+        attachChildren()
     }
     
-    private func buildChildren() {
+    private func attachChildren() {
         let stream = streamBuilder.build(withListener: interactor)
         attachChild(stream)
         

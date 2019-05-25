@@ -30,10 +30,8 @@ final class TabBarViewController: UITabBarController, TabBarPresentable {
     private func setupUI() {
         view.backgroundColor = .background
         
-        tabBar.backgroundColor = .background
-        tabBar.isTranslucent = false
-        tabBar.barStyle = .blackOpaque
-        UITabBar.appearance().tintColor = .green
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
     }
     
     private func setupControllers() {
@@ -86,7 +84,6 @@ extension TabBarViewController: StreamTabBarDelegate {
 extension TabBarViewController: TabBarViewControllable {
     
     func displayChildren(_ children: [TabBarChildViewController]) {
-        print(viewControllers)
         self.viewControllers = children
         
         let customTabBar = StreamTabBar(children: children)

@@ -19,4 +19,8 @@ protocol BroadcastPresentableListener: class {
 final class BroadcastViewController: UIViewController, BroadcastPresentable, BroadcastViewControllable {
 
     weak var listener: BroadcastPresentableListener?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

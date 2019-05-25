@@ -13,8 +13,8 @@ protocol StreamDependency: Dependency {
     // created by this RIB.
 }
 
-final class StreamComponent: Component<StreamDependency> {
-
+final class StreamComponent: Component<StreamDependency>, BroadcastDependency, SuggestionsDependency {
+    
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
@@ -25,16 +25,23 @@ protocol StreamBuildable: Buildable {
 }
 
 final class StreamBuilder: Builder<StreamDependency>, StreamBuildable {
-
+    
     override init(dependency: StreamDependency) {
         super.init(dependency: dependency)
     }
-
+    
     func build(withListener listener: StreamListener) -> StreamRouting {
         let component = StreamComponent(dependency: dependency)
         let viewController = StreamViewController(icon: #imageLiteral(resourceName: "icon_stream"))
         let interactor = StreamInteractor(presenter: viewController)
         interactor.listener = listener
-        return StreamRouter(interactor: interactor, viewController: viewController)
+        
+        let broadcastBuilder = BroadcastBuilder(dependency: component)
+        let suggestionsBuilder = SuggestionsBuilder(dependency: component)
+        
+        return StreamRouter(interactor: interactor,
+                            viewController: viewController,
+                            broadcastBuilder: broadcastBuilder,
+                            suggestionsBuilder: suggestionsBuilder)
     }
 }
