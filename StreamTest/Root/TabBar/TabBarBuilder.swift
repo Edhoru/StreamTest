@@ -13,7 +13,7 @@ protocol TabBarDependency: Dependency {
     // created by this RIB.
 }
 
-final class TabBarComponent: Component<TabBarDependency> {
+final class TabBarComponent: Component<TabBarDependency>, StreamDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -25,6 +25,8 @@ protocol TabBarBuildable: Buildable {
 }
 
 final class TabBarBuilder: Builder<TabBarDependency>, TabBarBuildable {
+    
+    
 
     override init(dependency: TabBarDependency) {
         super.init(dependency: dependency)
@@ -35,6 +37,17 @@ final class TabBarBuilder: Builder<TabBarDependency>, TabBarBuildable {
         let viewController = TabBarViewController()
         let interactor = TabBarInteractor(presenter: viewController)
         interactor.listener = listener
-        return TabBarRouter(interactor: interactor, viewController: viewController)
+        
+        let streamBuilder = StreamBuilder(dependency: component)
+//        let searchBuilder = SearchBuilder(dependency: component)
+//        let notificationsBuilder = NotificationsBuilder(dependency: component)
+//        let profileBuilder = ProfileBuilder(dependency: component)
+        
+        return TabBarRouter(interactor: interactor,
+                            viewController: viewController,
+                            streamBuilder: streamBuilder,
+                            searchBuilder: nil,
+                            notificationsBuilder: nil,
+                            profileBuilder: nil)
     }
 }

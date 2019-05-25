@@ -16,7 +16,7 @@ protocol TabBarPresentableListener: class {
     // interactor class.
 }
 
-final class TabBarViewController: UITabBarController, TabBarPresentable, TabBarViewControllable {
+final class TabBarViewController: UITabBarController, TabBarPresentable {
     
     weak var listener: TabBarPresentableListener?
     
@@ -24,7 +24,7 @@ final class TabBarViewController: UITabBarController, TabBarPresentable, TabBarV
         super.viewDidLoad()
         
         setupUI()
-        setupControllers()
+//        setupControllers()
     }
     
     private func setupUI() {
@@ -54,7 +54,6 @@ final class TabBarViewController: UITabBarController, TabBarPresentable, TabBarV
                            notificationsViewController,
                            profileViewController]
         
-        tabBar.backgroundColor = .background
         
         guard let tabBarChildren = children as? [TabBarChildViewController] else {
             return
@@ -79,6 +78,27 @@ extension TabBarViewController: StreamTabBarDelegate {
     
     func selected(tab: Int) {
         selectedIndex = tab
+    }
+    
+}
+
+
+extension TabBarViewController: TabBarViewControllable {
+    
+    func displayChildren(_ children: [TabBarChildViewController]) {
+        print(viewControllers)
+        self.viewControllers = children
+        
+        let customTabBar = StreamTabBar(children: children)
+        customTabBar.delegate = self
+        view.addSubview(customTabBar)
+        
+        NSLayoutConstraint.activate([
+            customTabBar.topAnchor.constraint(equalTo: tabBar.topAnchor),
+            customTabBar.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
+            customTabBar.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
+            customTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
     }
     
 }

@@ -20,6 +20,18 @@
 		4667D0602293BD8A00B67877 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05C2293BD8A00B67877 /* TabBarViewController.swift */; };
 		4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */; };
 		4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */; };
+		466C7294229959F900F3CC8A /* StreamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C7290229959F900F3CC8A /* StreamRouter.swift */; };
+		466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C7291229959F900F3CC8A /* StreamViewController.swift */; };
+		466C7296229959F900F3CC8A /* StreamBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C7292229959F900F3CC8A /* StreamBuilder.swift */; };
+		466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C7293229959F900F3CC8A /* StreamInteractor.swift */; };
+		466C729C22995A2300F3CC8A /* BroadcastRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C729822995A2300F3CC8A /* BroadcastRouter.swift */; };
+		466C729D22995A2300F3CC8A /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C729922995A2300F3CC8A /* BroadcastViewController.swift */; };
+		466C729E22995A2300F3CC8A /* BroadcastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C729A22995A2300F3CC8A /* BroadcastBuilder.swift */; };
+		466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C729B22995A2300F3CC8A /* BroadcastInteractor.swift */; };
+		466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A022995A4D00F3CC8A /* SuggestionsRouter.swift */; };
+		466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */; };
+		466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */; };
+		466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */; };
 		4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9402295B4420064C026 /* StreamTabBar.swift */; };
 		4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9442295B4D20064C026 /* TabBarChildViewController.swift */; };
 		A232B5E37CB3FDAE79596DA1 /* Pods_StreamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */; };
@@ -42,6 +54,18 @@
 		4667D05C2293BD8A00B67877 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		466C7290229959F900F3CC8A /* StreamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamRouter.swift; sourceTree = "<group>"; };
+		466C7291229959F900F3CC8A /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		466C7292229959F900F3CC8A /* StreamBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamBuilder.swift; sourceTree = "<group>"; };
+		466C7293229959F900F3CC8A /* StreamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamInteractor.swift; sourceTree = "<group>"; };
+		466C729822995A2300F3CC8A /* BroadcastRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastRouter.swift; sourceTree = "<group>"; };
+		466C729922995A2300F3CC8A /* BroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
+		466C729A22995A2300F3CC8A /* BroadcastBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastBuilder.swift; sourceTree = "<group>"; };
+		466C729B22995A2300F3CC8A /* BroadcastInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastInteractor.swift; sourceTree = "<group>"; };
+		466C72A022995A4D00F3CC8A /* SuggestionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsRouter.swift; sourceTree = "<group>"; };
+		466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsBuilder.swift; sourceTree = "<group>"; };
+		466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsInteractor.swift; sourceTree = "<group>"; };
 		4680D9402295B4420064C026 /* StreamTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTabBar.swift; sourceTree = "<group>"; };
 		4680D9442295B4D20064C026 /* TabBarChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarChildViewController.swift; sourceTree = "<group>"; };
 		DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,11 +141,11 @@
 		4667D04122939BFA00B67877 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				4680D93F2295B4190064C026 /* Subviews */,
 				4667D05B2293BD8A00B67877 /* TabBarRouter.swift */,
 				4667D05C2293BD8A00B67877 /* TabBarViewController.swift */,
 				4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */,
 				4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */,
+				4680D93F2295B4190064C026 /* Subviews */,
 				4667D0442293B99400B67877 /* Notifications */,
 				4667D0452293B9A500B67877 /* Profile */,
 				4667D0432293B98700B67877 /* Search */,
@@ -133,6 +157,10 @@
 		4667D04222939C0C00B67877 /* Stream */ = {
 			isa = PBXGroup;
 			children = (
+				466C7290229959F900F3CC8A /* StreamRouter.swift */,
+				466C7291229959F900F3CC8A /* StreamViewController.swift */,
+				466C7292229959F900F3CC8A /* StreamBuilder.swift */,
+				466C7293229959F900F3CC8A /* StreamInteractor.swift */,
 				4667D0472293BA1D00B67877 /* Broadcast */,
 				4667D0462293BA0800B67877 /* Suggestions */,
 			);
@@ -163,6 +191,10 @@
 		4667D0462293BA0800B67877 /* Suggestions */ = {
 			isa = PBXGroup;
 			children = (
+				466C72A022995A4D00F3CC8A /* SuggestionsRouter.swift */,
+				466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */,
+				466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */,
+				466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */,
 			);
 			path = Suggestions;
 			sourceTree = "<group>";
@@ -170,6 +202,10 @@
 		4667D0472293BA1D00B67877 /* Broadcast */ = {
 			isa = PBXGroup;
 			children = (
+				466C729822995A2300F3CC8A /* BroadcastRouter.swift */,
+				466C729922995A2300F3CC8A /* BroadcastViewController.swift */,
+				466C729A22995A2300F3CC8A /* BroadcastBuilder.swift */,
+				466C729B22995A2300F3CC8A /* BroadcastInteractor.swift */,
 				4667D04A2293BA3B00B67877 /* Ad */,
 				4667D0492293BA3500B67877 /* Chat */,
 				4667D0482293BA3000B67877 /* Player */,
@@ -392,16 +428,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4667D0552293BA8300B67877 /* RootInteractor.swift in Sources */,
+				466C7296229959F900F3CC8A /* StreamBuilder.swift in Sources */,
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
+				466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */,
+				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
+				466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */,
+				466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */,
+				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
 				4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */,
+				466C7294229959F900F3CC8A /* StreamRouter.swift in Sources */,
 				4667D0572293BAB700B67877 /* AppComponent.swift in Sources */,
 				4667D0602293BD8A00B67877 /* TabBarViewController.swift in Sources */,
 				4667D0522293BA8300B67877 /* RootRouter.swift in Sources */,
+				466C729D22995A2300F3CC8A /* BroadcastViewController.swift in Sources */,
 				4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */,
+				466C729E22995A2300F3CC8A /* BroadcastBuilder.swift in Sources */,
+				466C729C22995A2300F3CC8A /* BroadcastRouter.swift in Sources */,
+				466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */,
 				4667D0532293BA8300B67877 /* RootViewController.swift in Sources */,
+				466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */,
 				4618709622938A9E008A2CD7 /* AppDelegate.swift in Sources */,
 				4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */,
 			);
