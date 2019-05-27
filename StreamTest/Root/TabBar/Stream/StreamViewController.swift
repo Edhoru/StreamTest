@@ -66,7 +66,7 @@ final class StreamViewController: TabBarChildViewController, StreamPresentable {
 
 extension StreamViewController: StreamViewControllable {
     
-    func displayChildren(_ suggestions: ViewControllable,
+    func displayChildren(suggestions: ViewControllable,
                          broadcast: ViewControllable) {
         guard let suggestionsView = suggestions.uiviewController.view,
             let broadcastView = broadcast.uiviewController.view else {

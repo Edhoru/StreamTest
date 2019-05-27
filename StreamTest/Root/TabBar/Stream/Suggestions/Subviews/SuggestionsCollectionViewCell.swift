@@ -18,7 +18,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         static let state: CGFloat = 49
     }
     
-    var suggestion: Suggestion?
+    var broadcast: Broadcast?
     
     //UI
     private var stateCircleView: UIView = {
@@ -36,6 +36,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = Constants.avatar / 2
         imageView.clipsToBounds = true
+        imageView.image = #imageLiteral(resourceName: "icon_profile.png")
         return imageView
     }()
     
@@ -90,23 +91,35 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ suggestion: Suggestion) {
+    func setup(_ broadcast: Broadcast) {
         backgroundColor = .background
         
-        self.suggestion = suggestion
+        setupAvatar(with: broadcast.streamer.avatar)
+        self.broadcast = broadcast
         
-        stateCircleView.backgroundColor = suggestion.color
-        avatarImageView.image = suggestion.avatar
-        nameLabel.text = suggestion.name
-        nameLabel.textColor = suggestion.state == .off ? .darkGray : suggestion.state == .on ? .gray : .secondary
-        badgeView.text = suggestion.state == .new ? "" : "\(suggestion.badge)"
-        badgeView.backgroundColor = suggestion.state == .new ? .secondary : .badge
+        nameLabel.text = broadcast.streamer.name
+        nameLabel.textColor = broadcast.stream.state == .none ? .darkGray : broadcast.stream.state == .live ? .gray : .secondary
+        badgeView.text = broadcast.stream.state == .upcoming ? "" : "\(broadcast.streamer.badge)"
+        badgeView.backgroundColor = broadcast.stream.state == .upcoming ? .secondary : .badge
         
         setStateView()
     }
     
+    private func setupAvatar(with urlString: String?) {
+        guard let imageString = urlString,
+            let imageURL = URL(string: imageString) else { return }
+        
+        let imageService = ImageService()
+        imageService.findImage(with: imageURL) { (image) in
+            DispatchQueue.main.async {
+                self.avatarImageView.image = image
+            }
+        }
+    }
+    
+    
     func setStateView() {
-        guard let state = suggestion?.state else { return }
+        guard let state = broadcast?.stream.state else { return }
         
         //Let's draw the circle for the background path
         let center = CGPoint(x: Constants.state / 2,
@@ -127,7 +140,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         stateCircleView.layer.addSublayer(trackLayer)
         
         //Add the circle mask
-        guard state != .off else { return }
+        guard state != .none else { return }
         
         let stateLayer = CAShapeLayer()
         stateLayer.path = circularPath.cgPath
@@ -140,7 +153,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         //If the state is new we don't need a gradient, so we just set the state layer line color
         //On the other hand if the state is on we create the gradient
         //For both cases we need the animation
-        if state == .new {
+        if state == .upcoming {
             stateLayer.strokeColor = UIColor.secondary.cgColor
             stateCircleView.layer.addSublayer(stateLayer)
         } else {

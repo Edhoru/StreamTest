@@ -1,5 +1,5 @@
 //
-//  SuggestionsInteractor.swift
+//  PlayerInteractor.swift
 //  StreamTest
 //
 //  Created by Alberto Huerdo on 5/25/19.
@@ -9,28 +9,31 @@
 import RIBs
 import RxSwift
 
-protocol SuggestionsRouting: ViewableRouting {
+protocol PlayerRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol SuggestionsPresentable: Presentable {
-    var listener: SuggestionsPresentableListener? { get set }
+protocol PlayerPresentable: Presentable {
+    var listener: PlayerPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
-    func display(broadcasts: [Broadcast])
 }
 
-protocol SuggestionsListener: class {
+protocol PlayerListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable>, SuggestionsInteractable, SuggestionsPresentableListener {
+final class PlayerInteractor: PresentableInteractor<PlayerPresentable>, PlayerInteractable, PlayerPresentableListener {
 
-    weak var router: SuggestionsRouting?
-    weak var listener: SuggestionsListener?
+    weak var router: PlayerRouting?
+    weak var listener: PlayerListener?
+    
+    var video: String
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: SuggestionsPresentable) {
+    init(presenter: PlayerPresentable, video: String) {
+        self.video = video
+        
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -38,13 +41,6 @@ final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable>
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
-        BroadcastsDataService().get { (broadcasts, error) in
-            guard error == nil else {
-                fatalError("there is an error when getting the suggestions")
-            }
-            
-            self.presenter.display(broadcasts: broadcasts)
-        }
     }
 
     override func willResignActive() {

@@ -15,7 +15,7 @@ protocol StreamInteractable: Interactable, BroadcastListener, SuggestionsListene
 
 protocol StreamViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
-    func displayChildren(_ suggestions: ViewControllable,
+    func displayChildren(suggestions: ViewControllable,
                          broadcast: ViewControllable)
 }
 
@@ -45,7 +45,7 @@ final class StreamRouter: ViewableRouter<StreamInteractable, StreamViewControlla
         let suggestions = suggestionsBuilder.build(withListener: interactor)
         attachChild(suggestions)
         
-        viewController.displayChildren(suggestions.viewControllable,
+        viewController.displayChildren(suggestions: suggestions.viewControllable,
                                        broadcast: broadcast.viewControllable)
     }
     

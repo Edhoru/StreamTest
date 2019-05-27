@@ -21,7 +21,7 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
     weak var listener: SuggestionsPresentableListener?
     
     //Properties
-    var suggestions: [Suggestion] = []
+    var broadcasts: [Broadcast] = []
     
     //UI
     private var collectionView: UICollectionView = {
@@ -67,13 +67,13 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
 extension SuggestionsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return suggestions.count
+        return broadcasts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let suggestion = suggestions[indexPath.row]
+        let broadcast = broadcasts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SuggestionsCollectionViewCell
-        cell.setup(suggestion)
+        cell.setup(broadcast)
         return cell
     }
     
@@ -88,8 +88,8 @@ extension SuggestionsViewController: UICollectionViewDelegate {
 
 extension SuggestionsViewController: SuggestionsPresentable {
     
-    func display(suggestions: [Suggestion]) {
-        self.suggestions = suggestions
+    func display(broadcasts: [Broadcast]) {
+        self.broadcasts = broadcasts
         collectionView.reloadData()
     }
     

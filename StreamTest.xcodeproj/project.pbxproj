@@ -34,9 +34,18 @@
 		466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */; };
 		466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72A9229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift */; };
 		466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72AB229972FB00F3CC8A /* Suggestion.swift */; };
-		466C72AE2299753C00F3CC8A /* SuggestionsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */; };
+		466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72AD2299753C00F3CC8A /* BroadcastsDataService.swift */; };
 		466C72B02299A40800F3CC8A /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466C72AF2299A40800F3CC8A /* View.xib */; };
 		466C72B22299D86600F3CC8A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72B12299D86600F3CC8A /* UILabel.swift */; };
+		466C72B7229A51B100F3CC8A /* PlayerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72B3229A51B100F3CC8A /* PlayerRouter.swift */; };
+		466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72B4229A51B100F3CC8A /* PlayerViewController.swift */; };
+		466C72B9229A51B100F3CC8A /* PlayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72B5229A51B100F3CC8A /* PlayerBuilder.swift */; };
+		466C72BA229A51B100F3CC8A /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72B6229A51B100F3CC8A /* PlayerInteractor.swift */; };
+		466C72BF229B7FF600F3CC8A /* broadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 466C72BE229B7FF600F3CC8A /* broadcasts.json */; };
+		466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72C0229C563000F3CC8A /* Broadcast.swift */; };
+		466C72C3229C563A00F3CC8A /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72C2229C563A00F3CC8A /* Stream.swift */; };
+		466C72C5229C564400F3CC8A /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72C4229C564400F3CC8A /* Streamer.swift */; };
+		466C72C8229C70FB00F3CC8A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C72C7229C70FB00F3CC8A /* ImageService.swift */; };
 		4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9402295B4420064C026 /* StreamTabBar.swift */; };
 		4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680D9442295B4D20064C026 /* TabBarChildViewController.swift */; };
 		A232B5E37CB3FDAE79596DA1 /* Pods_StreamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */; };
@@ -73,9 +82,18 @@
 		466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsInteractor.swift; sourceTree = "<group>"; };
 		466C72A9229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		466C72AB229972FB00F3CC8A /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
-		466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsDataService.swift; sourceTree = "<group>"; };
+		466C72AD2299753C00F3CC8A /* BroadcastsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastsDataService.swift; sourceTree = "<group>"; };
 		466C72AF2299A40800F3CC8A /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		466C72B12299D86600F3CC8A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		466C72B3229A51B100F3CC8A /* PlayerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRouter.swift; sourceTree = "<group>"; };
+		466C72B4229A51B100F3CC8A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		466C72B5229A51B100F3CC8A /* PlayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBuilder.swift; sourceTree = "<group>"; };
+		466C72B6229A51B100F3CC8A /* PlayerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
+		466C72BE229B7FF600F3CC8A /* broadcasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = broadcasts.json; sourceTree = "<group>"; };
+		466C72C0229C563000F3CC8A /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		466C72C2229C563A00F3CC8A /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		466C72C4229C564400F3CC8A /* Streamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
+		466C72C7229C70FB00F3CC8A /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		4680D9402295B4420064C026 /* StreamTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTabBar.swift; sourceTree = "<group>"; };
 		4680D9442295B4D20064C026 /* TabBarChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarChildViewController.swift; sourceTree = "<group>"; };
 		DD81F241A008F698152A1A94 /* Pods_StreamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				4680D9432295B4B80064C026 /* Components */,
+				466C72BD229B7FE600F3CC8A /* Data */,
 				4680D9422295B4AD0064C026 /* Models */,
 				4667D0582293BC0E00B67877 /* Extensions */,
 			);
@@ -206,7 +225,6 @@
 				466C72A122995A4D00F3CC8A /* SuggestionsViewController.swift */,
 				466C72A222995A4D00F3CC8A /* SuggestionsBuilder.swift */,
 				466C72A322995A4D00F3CC8A /* SuggestionsInteractor.swift */,
-				466C72AD2299753C00F3CC8A /* SuggestionsDataService.swift */,
 				466C72A8229971D000F3CC8A /* Subviews */,
 			);
 			path = Suggestions;
@@ -230,6 +248,10 @@
 		4667D0482293BA3000B67877 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				466C72B3229A51B100F3CC8A /* PlayerRouter.swift */,
+				466C72B4229A51B100F3CC8A /* PlayerViewController.swift */,
+				466C72B5229A51B100F3CC8A /* PlayerBuilder.swift */,
+				466C72B6229A51B100F3CC8A /* PlayerInteractor.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -288,6 +310,24 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		466C72BD229B7FE600F3CC8A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				466C72BE229B7FF600F3CC8A /* broadcasts.json */,
+				466C72C6229C70DA00F3CC8A /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		466C72C6229C70DA00F3CC8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				466C72AD2299753C00F3CC8A /* BroadcastsDataService.swift */,
+				466C72C7229C70FB00F3CC8A /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4680D93F2295B4190064C026 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +340,9 @@
 			isa = PBXGroup;
 			children = (
 				466C72AB229972FB00F3CC8A /* Suggestion.swift */,
+				466C72C0229C563000F3CC8A /* Broadcast.swift */,
+				466C72C2229C563A00F3CC8A /* Stream.swift */,
+				466C72C4229C564400F3CC8A /* Streamer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466C72BF229B7FF600F3CC8A /* broadcasts.json in Resources */,
 				461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */,
 				466C72B02299A40800F3CC8A /* View.xib in Resources */,
 				4618709D22938A9F008A2CD7 /* Assets.xcassets in Resources */,
@@ -453,20 +497,25 @@
 			files = (
 				4667D0552293BA8300B67877 /* RootInteractor.swift in Sources */,
 				466C7296229959F900F3CC8A /* StreamBuilder.swift in Sources */,
+				466C72B9229A51B100F3CC8A /* PlayerBuilder.swift in Sources */,
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
-				466C72AE2299753C00F3CC8A /* SuggestionsDataService.swift in Sources */,
+				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,
+				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
+				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
 				466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */,
 				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
 				466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */,
 				466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */,
+				466C72B7229A51B100F3CC8A /* PlayerRouter.swift in Sources */,
 				466C72B22299D86600F3CC8A /* UILabel.swift in Sources */,
 				466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */,
 				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
 				4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */,
 				466C7294229959F900F3CC8A /* StreamRouter.swift in Sources */,
+				466C72BA229A51B100F3CC8A /* PlayerInteractor.swift in Sources */,
 				4667D0572293BAB700B67877 /* AppComponent.swift in Sources */,
 				4667D0602293BD8A00B67877 /* TabBarViewController.swift in Sources */,
 				4667D0522293BA8300B67877 /* RootRouter.swift in Sources */,
@@ -478,8 +527,11 @@
 				4667D0532293BA8300B67877 /* RootViewController.swift in Sources */,
 				466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */,
 				466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */,
+				466C72C5229C564400F3CC8A /* Streamer.swift in Sources */,
+				466C72C8229C70FB00F3CC8A /* ImageService.swift in Sources */,
 				4618709622938A9E008A2CD7 /* AppDelegate.swift in Sources */,
 				4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */,
+				466C72C3229C563A00F3CC8A /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +606,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -608,6 +661,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
