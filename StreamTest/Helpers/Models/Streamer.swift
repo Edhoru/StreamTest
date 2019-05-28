@@ -9,6 +9,7 @@
 import Foundation
 
 struct Streamer: Codable {
+    
     var id: String
     var avatar: String
     var badge: Int

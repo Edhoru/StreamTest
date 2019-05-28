@@ -11,6 +11,7 @@ import RxSwift
 
 protocol PlayerRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToPlayer(with broadcast: Broadcast)
 }
 
 protocol PlayerPresentable: Presentable {
@@ -27,13 +28,11 @@ final class PlayerInteractor: PresentableInteractor<PlayerPresentable>, PlayerIn
     weak var router: PlayerRouting?
     weak var listener: PlayerListener?
     
-    var video: String
+    var videoUrl: String?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: PlayerPresentable, video: String) {
-        self.video = video
-        
+    override init(presenter: PlayerPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }

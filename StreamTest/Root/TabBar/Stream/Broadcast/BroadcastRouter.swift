@@ -18,9 +18,11 @@ protocol BroadcastViewControllable: ViewControllable {
     func displayChildren(player: ViewControllable)
 }
 
-final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastViewControllable>, BroadcastRouting {
+final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastViewControllable> {
 
     let playerBuilder: PlayerBuildable
+    
+    var player: PlayerRouting!
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: BroadcastInteractable,
@@ -35,11 +37,19 @@ final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastView
     }
     
     private func attachChildren() {
-        let player = playerBuilder.build(withListener: interactor,
-                                         video: "v106400740")
+        player = playerBuilder.build(withListener: interactor)
         attachChild(player)
         
         viewController.displayChildren(player: player.viewControllable)
+    }
+    
+}
+
+
+extension BroadcastRouter: BroadcastRouting {
+    
+    func set(broadcast: Broadcast) {
+        player.routeToPlayer(with: broadcast)
     }
     
 }

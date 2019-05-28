@@ -9,6 +9,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import AVFoundation
 
 protocol PlayerPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -16,14 +17,14 @@ protocol PlayerPresentableListener: class {
     // interactor class.
 }
 
-final class PlayerViewController: UIViewController, PlayerPresentable, PlayerViewControllable {
-
+final class PlayerViewController: UIViewController {
+    
     weak var listener: PlayerPresentableListener?
     
     //Properties
+    var broadcast: Broadcast!
     
     //UI
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,4 +35,22 @@ final class PlayerViewController: UIViewController, PlayerPresentable, PlayerVie
     private func setupUI() {
         view.backgroundColor = .cyan
     }
+}
+
+
+extension PlayerViewController: PlayerPresentable {
+}
+
+extension PlayerViewController: PlayerViewControllable {
+    
+    func embed(_ broadcast: Broadcast) {        
+        guard let url = broadcast.stream.videoUrl else { return }
+        
+        let player = AVPlayer(url: url)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(playerLayer)
+        player.play()
+    }
+    
 }

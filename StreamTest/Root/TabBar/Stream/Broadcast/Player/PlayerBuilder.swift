@@ -21,8 +21,7 @@ final class PlayerComponent: Component<PlayerDependency> {
 // MARK: - Builder
 
 protocol PlayerBuildable: Buildable {
-    func build(withListener listener: PlayerListener,
-               video: String) -> PlayerRouting
+    func build(withListener listener: PlayerListener) -> PlayerRouting
 }
 
 final class PlayerBuilder: Builder<PlayerDependency>, PlayerBuildable {
@@ -31,11 +30,10 @@ final class PlayerBuilder: Builder<PlayerDependency>, PlayerBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: PlayerListener,
-               video: String) -> PlayerRouting {
+    func build(withListener listener: PlayerListener) -> PlayerRouting {
         let component = PlayerComponent(dependency: dependency)
         let viewController = PlayerViewController()
-        let interactor = PlayerInteractor(presenter: viewController, video: video)
+        let interactor = PlayerInteractor(presenter: viewController)
         interactor.listener = listener
         return PlayerRouter(interactor: interactor, viewController: viewController)
     }

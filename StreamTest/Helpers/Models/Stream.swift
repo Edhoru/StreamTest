@@ -23,6 +23,14 @@ struct Stream: Codable {
     var title: String
     var views: Int
     
+    var videoUrl: URL? {
+        get {
+            //This variable returns apple's video for testing streams
+            let fullUrl = "http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8"
+            return URL(string: fullUrl)
+        }
+    }
+    
     /*
     "stream" : {
     "id" : "Xp7t9fWz62Q",

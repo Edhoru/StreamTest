@@ -11,6 +11,7 @@ import RxSwift
 
 protocol StreamRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToBroadcast(_ broadcast: Broadcast)
 }
 
 protocol StreamPresentable: Presentable {
@@ -22,7 +23,7 @@ protocol StreamListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class StreamInteractor: PresentableInteractor<StreamPresentable>, StreamInteractable, StreamPresentableListener {
+final class StreamInteractor: PresentableInteractor<StreamPresentable> {
 
     weak var router: StreamRouting?
     weak var listener: StreamListener?
@@ -43,4 +44,18 @@ final class StreamInteractor: PresentableInteractor<StreamPresentable>, StreamIn
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+}
+
+
+extension StreamInteractor: StreamInteractable {
+    
+    func prepareFor(broadcast: Broadcast) {
+        router?.routeToBroadcast(broadcast)
+    }    
+    
+}
+
+
+extension StreamInteractor: StreamPresentableListener {
+    
 }

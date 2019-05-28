@@ -15,13 +15,22 @@ protocol PlayerInteractable: Interactable {
 
 protocol PlayerViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+    func embed(_ broadcast: Broadcast)
 }
 
-final class PlayerRouter: ViewableRouter<PlayerInteractable, PlayerViewControllable>, PlayerRouting {
+final class PlayerRouter: ViewableRouter<PlayerInteractable, PlayerViewControllable> {
 
     // TODO: Constructor inject child builder protocols to allow building children.
     override init(interactor: PlayerInteractable, viewController: PlayerViewControllable) {
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+}
+
+
+extension PlayerRouter: PlayerRouting {
+    
+    func routeToPlayer(with broadcast: Broadcast) {
+        viewController.embed(broadcast)
     }
 }

@@ -21,9 +21,10 @@ protocol SuggestionsPresentable: Presentable {
 
 protocol SuggestionsListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func prepareFor(broadcast: Broadcast)
 }
 
-final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable>, SuggestionsInteractable, SuggestionsPresentableListener {
+final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable> {
 
     weak var router: SuggestionsRouting?
     weak var listener: SuggestionsListener?
@@ -51,4 +52,17 @@ final class SuggestionsInteractor: PresentableInteractor<SuggestionsPresentable>
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+}
+
+
+extension SuggestionsInteractor: SuggestionsInteractable {
+    
+}
+
+extension SuggestionsInteractor: SuggestionsPresentableListener {
+    
+    func select(broadcast: Broadcast) {
+        listener?.prepareFor(broadcast: broadcast)
+    }
+    
 }

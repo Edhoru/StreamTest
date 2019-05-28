@@ -19,10 +19,13 @@ protocol StreamViewControllable: ViewControllable {
                          broadcast: ViewControllable)
 }
 
-final class StreamRouter: ViewableRouter<StreamInteractable, StreamViewControllable>, StreamRouting {
+final class StreamRouter: ViewableRouter<StreamInteractable, StreamViewControllable> {
     
     let broadcastBuilder: BroadcastBuildable
     let suggestionsBuilder: SuggestionsBuildable
+    
+    var broadcast: BroadcastRouting!
+    var suggestions: SuggestionsRouting!
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: StreamInteractable,
@@ -39,14 +42,23 @@ final class StreamRouter: ViewableRouter<StreamInteractable, StreamViewControlla
     }
     
     private func attachChildren() {
-        let broadcast = broadcastBuilder.build(withListener: interactor)
+        broadcast = broadcastBuilder.build(withListener: interactor)
         attachChild(broadcast)
         
-        let suggestions = suggestionsBuilder.build(withListener: interactor)
+        suggestions = suggestionsBuilder.build(withListener: interactor)
         attachChild(suggestions)
         
         viewController.displayChildren(suggestions: suggestions.viewControllable,
                                        broadcast: broadcast.viewControllable)
+    }
+    
+}
+
+
+extension StreamRouter: StreamRouting {
+    
+    func routeToBroadcast(_ broadcast: Broadcast) {
+        self.broadcast.set(broadcast: broadcast)
     }
     
 }

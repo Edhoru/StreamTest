@@ -14,6 +14,7 @@ protocol SuggestionsPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
+    func select(broadcast: Broadcast)
 }
 
 final class SuggestionsViewController: UIViewController, SuggestionsViewControllable {
@@ -81,6 +82,10 @@ extension SuggestionsViewController: UICollectionViewDataSource {
 
 extension SuggestionsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let broadcast = broadcasts[indexPath.row]
+        listener?.select(broadcast: broadcast)
+    }
 }
 
 
