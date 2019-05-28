@@ -15,6 +15,7 @@
 		4626BA96229CFF4C00505854 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA95229CFF4C00505854 /* Date.swift */; };
 		4626BA98229CFFCD00505854 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA97229CFFCD00505854 /* Time.swift */; };
 		4626BA9A229D030700505854 /* StreamerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA99229D030700505854 /* StreamerView.swift */; };
+		4626BA9C229DA1AC00505854 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9B229DA1AC00505854 /* IconTextButton.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -68,6 +69,7 @@
 		4626BA95229CFF4C00505854 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4626BA97229CFFCD00505854 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		4626BA99229D030700505854 /* StreamerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamerView.swift; sourceTree = "<group>"; };
+		4626BA9B229DA1AC00505854 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				4680D9442295B4D20064C026 /* TabBarChildViewController.swift */,
+				4626BA9B229DA1AC00505854 /* IconTextButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				466C72B9229A51B100F3CC8A /* PlayerBuilder.swift in Sources */,
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
+				4626BA9C229DA1AC00505854 /* IconTextButton.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
 				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,

@@ -43,6 +43,18 @@ class StreamerView: UIView {
         return label
     }()
     
+    var shareButton: IconTextButton = {
+        let button = IconTextButton(kind: .share, title: nil)
+        button.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
+        return button
+    }()
+    
+    var commentsButton: IconTextButton = {
+        let button = IconTextButton(kind: .comments, title: nil)
+        button.addTarget(self, action: #selector(commentsAction), for: .touchUpInside)
+        return button
+    }()
+    
     var likesLeftView: LikesLeftView = {
         let view = LikesLeftView(frame: .zero)
         return view
@@ -51,9 +63,13 @@ class StreamerView: UIView {
     func setup(streamer: Streamer, messageCount: Int) {
         backgroundColor = .background
         
+        commentsButton.custom(title: "\(messageCount)")
+        
         addSubview(avatarImageView)
         addSubview(nameLabel)
         addSubview(followersLabel)
+        addSubview(shareButton)
+        addSubview(commentsButton)
         addSubview(likesLeftView)
         
         NSLayoutConstraint.activate([
@@ -63,14 +79,24 @@ class StreamerView: UIView {
             avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             nameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 8),
             nameLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
             
-            followersLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+            followersLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 8),
             followersLabel.topAnchor.constraint(equalTo: centerYAnchor, constant: 8),
             
-            likesLeftView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 16),
-            likesLeftView.leadingAnchor.constraint(equalTo: followersLabel.trailingAnchor, constant: 16),
+            shareButton.widthAnchor.constraint(equalToConstant: 36),
+            shareButton.topAnchor.constraint(equalTo: nameLabel.topAnchor),
+            shareButton.bottomAnchor.constraint(equalTo: followersLabel.bottomAnchor),
+            shareButton.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 8),
+            shareButton.leadingAnchor.constraint(equalTo: followersLabel.trailingAnchor, constant: 8),
+            
+            commentsButton.widthAnchor.constraint(equalToConstant: 36),
+            commentsButton.topAnchor.constraint(equalTo: shareButton.topAnchor),
+            commentsButton.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor),
+            commentsButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor, constant: 8),
+            
+            likesLeftView.leadingAnchor.constraint(equalTo: commentsButton.trailingAnchor, constant: 8),
             likesLeftView.heightAnchor.constraint(equalToConstant: 36),
             likesLeftView.widthAnchor.constraint(equalToConstant: 68),
             likesLeftView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -107,6 +133,16 @@ class StreamerView: UIView {
         
         followersLabel.text = "\(followersFormatted) \(followersExtension)"
 
+    }
+    
+    //Actions
+    
+    @objc func shareAction() {
+        
+    }
+    
+    @objc func commentsAction() {
+        
     }
     
 }
