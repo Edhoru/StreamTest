@@ -23,6 +23,7 @@ final class PlayerViewController: UIViewController {
     
     //Properties
     var broadcast: Broadcast!
+    var playerLayer: AVPlayerLayer!
     
     //UI
     
@@ -34,6 +35,14 @@ final class PlayerViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .cyan
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        if playerLayer != nil {
+            playerLayer.frame = self.view.bounds
+        }
     }
 }
 
@@ -47,8 +56,13 @@ extension PlayerViewController: PlayerViewControllable {
         guard let url = broadcast.stream.videoUrl else { return }
         
         let player = AVPlayer(url: url)
-        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.view.bounds
+        playerLayer.videoGravity = .resizeAspect
+        playerLayer.needsDisplayOnBoundsChange = true
+        
+        player.isMuted = true
+        
         self.view.layer.addSublayer(playerLayer)
         player.play()
     }

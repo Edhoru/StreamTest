@@ -38,16 +38,18 @@ extension BroadcastViewController: BroadcastViewControllable {
         guard let playerView = player.uiviewController.view else {
                 return
         }
-        
         playerView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(playerView)
         
+        
+        
+        
+        
         NSLayoutConstraint.activate([
-            playerView.topAnchor.constraint(equalTo: view.topAnchor),
+            playerView.heightAnchor.constraint(equalToConstant: 300),
+            playerView.topAnchor.constraint(equalTo: view.topAnchor, constant:  80),
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     
