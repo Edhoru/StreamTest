@@ -57,7 +57,6 @@ class IconTextButton: UIButton {
         addSubview(customTitleLabel)
         
         NSLayoutConstraint.activate([
-            customIconImageView.widthAnchor.constraint(equalToConstant: 22),
             customIconImageView.topAnchor.constraint(equalTo: topAnchor),
             customIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             customIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor),

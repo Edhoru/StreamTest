@@ -13,7 +13,7 @@ protocol BroadcastDependency: Dependency {
     // created by this RIB.
 }
 
-final class BroadcastComponent: Component<BroadcastDependency>, PlayerDependency {
+final class BroadcastComponent: Component<BroadcastDependency>, PlayerDependency, ChatDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -37,9 +37,11 @@ final class BroadcastBuilder: Builder<BroadcastDependency>, BroadcastBuildable {
         interactor.listener = listener
         
         let playerBuilder = PlayerBuilder(dependency: component)
+        let chatBuilder = ChatBuilder(dependency: component)
         
         return BroadcastRouter(interactor: interactor,
                                viewController: viewController,
-                               playerBuilder: playerBuilder)
+                               playerBuilder: playerBuilder,
+                               chatBuilder: chatBuilder)
     }
 }

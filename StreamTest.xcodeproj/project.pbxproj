@@ -18,6 +18,14 @@
 		4626BA9C229DA1AC00505854 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9B229DA1AC00505854 /* IconTextButton.swift */; };
 		4626BA9E229DB66B00505854 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9D229DB66B00505854 /* Int.swift */; };
 		4626BAA0229DBBD800505854 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9F229DBBD800505854 /* UserDefaults.swift */; };
+		4626BAA3229DC3A600505854 /* ads.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAA1229DC3A600505854 /* ads.json */; };
+		4626BAA4229DC3A600505854 /* chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAA2229DC3A600505854 /* chat.json */; };
+		4626BAA6229DDA4200505854 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA5229DDA4200505854 /* ChatMessage.swift */; };
+		4626BAA8229DDB4700505854 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA7229DDB4700505854 /* String.swift */; };
+		4626BAAD229DDCF900505854 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA9229DDCF900505854 /* ChatRouter.swift */; };
+		4626BAAE229DDCF900505854 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAA229DDCF900505854 /* ChatViewController.swift */; };
+		4626BAAF229DDCF900505854 /* ChatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAB229DDCF900505854 /* ChatBuilder.swift */; };
+		4626BAB0229DDCF900505854 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAC229DDCF900505854 /* ChatInteractor.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -74,6 +82,14 @@
 		4626BA9B229DA1AC00505854 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 		4626BA9D229DB66B00505854 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		4626BA9F229DBBD800505854 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		4626BAA1229DC3A600505854 /* ads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ads.json; sourceTree = "<group>"; };
+		4626BAA2229DC3A600505854 /* chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chat.json; sourceTree = "<group>"; };
+		4626BAA5229DDA4200505854 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		4626BAA7229DDB4700505854 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4626BAA9229DDCF900505854 /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		4626BAAA229DDCF900505854 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4626BAAB229DDCF900505854 /* ChatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBuilder.swift; sourceTree = "<group>"; };
+		4626BAAC229DDCF900505854 /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -286,6 +302,10 @@
 		4667D0492293BA3500B67877 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4626BAA9229DDCF900505854 /* ChatRouter.swift */,
+				4626BAAA229DDCF900505854 /* ChatViewController.swift */,
+				4626BAAB229DDCF900505854 /* ChatBuilder.swift */,
+				4626BAAC229DDCF900505854 /* ChatInteractor.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -312,6 +332,7 @@
 				4626BA95229CFF4C00505854 /* Date.swift */,
 				4626BA9D229DB66B00505854 /* Int.swift */,
 				4626BA9F229DBBD800505854 /* UserDefaults.swift */,
+				4626BAA7229DDB4700505854 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,7 +364,9 @@
 		466C72BD229B7FE600F3CC8A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4626BAA1229DC3A600505854 /* ads.json */,
 				466C72BE229B7FF600F3CC8A /* broadcasts.json */,
+				4626BAA2229DC3A600505854 /* chat.json */,
 				466C72C6229C70DA00F3CC8A /* Services */,
 			);
 			path = Data;
@@ -374,6 +397,7 @@
 				466C72C2229C563A00F3CC8A /* Stream.swift */,
 				466C72C4229C564400F3CC8A /* Streamer.swift */,
 				4626BA97229CFFCD00505854 /* Time.swift */,
+				4626BAA5229DDA4200505854 /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +491,8 @@
 				466C72BF229B7FF600F3CC8A /* broadcasts.json in Resources */,
 				461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */,
 				466C72B02299A40800F3CC8A /* View.xib in Resources */,
+				4626BAA4229DC3A600505854 /* chat.json in Resources */,
+				4626BAA3229DC3A600505854 /* ads.json in Resources */,
 				4618709D22938A9F008A2CD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,14 +556,17 @@
 				4667D0552293BA8300B67877 /* RootInteractor.swift in Sources */,
 				466C7296229959F900F3CC8A /* StreamBuilder.swift in Sources */,
 				466C72B9229A51B100F3CC8A /* PlayerBuilder.swift in Sources */,
+				4626BAAE229DDCF900505854 /* ChatViewController.swift in Sources */,
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4626BA9C229DA1AC00505854 /* IconTextButton.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
+				4626BAA6229DDA4200505854 /* ChatMessage.swift in Sources */,
 				4626BA9E229DB66B00505854 /* Int.swift in Sources */,
 				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,
 				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
+				4626BAAD229DDCF900505854 /* ChatRouter.swift in Sources */,
 				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
 				4626BA96229CFF4C00505854 /* Date.swift in Sources */,
@@ -545,6 +574,7 @@
 				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
 				466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */,
 				4626BA9A229D030700505854 /* StreamerView.swift in Sources */,
+				4626BAAF229DDCF900505854 /* ChatBuilder.swift in Sources */,
 				466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */,
 				466C72B7229A51B100F3CC8A /* PlayerRouter.swift in Sources */,
 				4626BA98229CFFCD00505854 /* Time.swift in Sources */,
@@ -562,6 +592,7 @@
 				4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */,
 				466C729E22995A2300F3CC8A /* BroadcastBuilder.swift in Sources */,
 				466C729C22995A2300F3CC8A /* BroadcastRouter.swift in Sources */,
+				4626BAB0229DDCF900505854 /* ChatInteractor.swift in Sources */,
 				466C72A722995A4D00F3CC8A /* SuggestionsInteractor.swift in Sources */,
 				4667D0532293BA8300B67877 /* RootViewController.swift in Sources */,
 				466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */,
@@ -572,6 +603,7 @@
 				4618709622938A9E008A2CD7 /* AppDelegate.swift in Sources */,
 				4667D0612293BD8A00B67877 /* TabBarBuilder.swift in Sources */,
 				466C72C3229C563A00F3CC8A /* Stream.swift in Sources */,
+				4626BAA8229DDB4700505854 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

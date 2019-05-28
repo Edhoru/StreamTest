@@ -1,0 +1,27 @@
+//
+//  ChatRouter.swift
+//  StreamTest
+//
+//  Created by Alberto Huerdo on 5/28/19.
+//  Copyright © 2019 Huerdo. All rights reserved.
+//
+
+import RIBs
+
+protocol ChatInteractable: Interactable {
+    var router: ChatRouting? { get set }
+    var listener: ChatListener? { get set }
+}
+
+protocol ChatViewControllable: ViewControllable {
+    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+}
+
+final class ChatRouter: ViewableRouter<ChatInteractable, ChatViewControllable>, ChatRouting {
+
+    // TODO: Constructor inject child builder protocols to allow building children.
+    override init(interactor: ChatInteractable, viewController: ChatViewControllable) {
+        super.init(interactor: interactor, viewController: viewController)
+        interactor.router = self
+    }
+}

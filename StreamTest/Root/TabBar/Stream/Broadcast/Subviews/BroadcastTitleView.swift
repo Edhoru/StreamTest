@@ -59,9 +59,7 @@ class BroadcastTitleView: UIView {
         
         //Format the number of views & date
         var timePassed = ""
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        if let date = dateFormatter.date(from: publishedAt) {
+        if let date = publishedAt.jsonDate() {
             timePassed = date.timeAgoDisplay
         }
         

@@ -8,28 +8,34 @@
 
 import RIBs
 
-protocol BroadcastInteractable: Interactable, PlayerListener {
+protocol BroadcastInteractable: Interactable, PlayerListener, ChatListener {
     var router: BroadcastRouting? { get set }
     var listener: BroadcastListener? { get set }
 }
 
 protocol BroadcastViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
-    func displayChildren(player: ViewControllable)
+    func displayChildren(player: ViewControllable,
+                         chat: ViewControllable)
     func display(broadcast: Broadcast)
 }
 
 final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastViewControllable> {
-
+    
     let playerBuilder: PlayerBuildable
+    let chatBuilder: ChatBuildable
     
     var player: PlayerRouting!
+    var chat: ChatRouting!
+    
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: BroadcastInteractable,
-                  viewController: BroadcastViewControllable,
-                  playerBuilder: PlayerBuildable) {
+         viewController: BroadcastViewControllable,
+         playerBuilder: PlayerBuildable,
+         chatBuilder: ChatBuildable) {
         self.playerBuilder = playerBuilder
+        self.chatBuilder = chatBuilder
         
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -41,7 +47,11 @@ final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastView
         player = playerBuilder.build(withListener: interactor)
         attachChild(player)
         
-        viewController.displayChildren(player: player.viewControllable)
+        chat = chatBuilder.build(withListener: interactor)
+        attachChild(chat)
+        
+        viewController.displayChildren(player: player.viewControllable,
+                                       chat: chat.viewControllable)
     }
     
 }
@@ -55,3 +65,4 @@ extension BroadcastRouter: BroadcastRouting {
     }
     
 }
+

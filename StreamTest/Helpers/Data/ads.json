@@ -1,0 +1,156 @@
+[
+    {
+        "id": "0",
+        "streamer" : {
+            "id" : "UCAW-NpUFkMyCNrvRSSGIvDQ",
+            "avatar" : "https://yt3.ggpht.com/a/AGF-l78y8MCCrVBY1j_wTkMft7fW_4it-VRqWVgYNg=s288-mo-c-c0xffffffff-rj-k-no",
+            "badge" : 3,
+            "favorite" : true,
+            "followers" : 8900,
+            "following" : false,
+            "likes" : 101000,
+            "name" : "Ninja"
+        },
+        "stream" : {
+            "id" : "Xp7t9fWz62Q",
+            "likes" : 101000,
+            "messagesCount" : 68,
+            "publishedAt" : "2019-05-25T21:35:19.000Z",
+            "state" : "live",
+            "title" : "Stories Of A Stream Sniper!",
+            "views" : 2979779
+        }
+    },
+    {
+        "id": "1",
+        "streamer" : {
+            "id" : "UC6ziKsIV2GyLQhZqd7kN-pg",
+            "avatar" : "https://yt3.ggpht.com/a/AGF-l79JA0Qj2u2TTEHz3xjCtCMVAmcVeMt_Gfuc7A=s288-mo-c-c0xffffffff-rj-k-no",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 8500,
+            "following" : false,
+            "likes" : 25000,
+            "name" : "Pokimane"
+        },
+        "stream" : {
+            "id" : "6ZpXJh0HUMc",
+            "likes" : 25000,
+            "messagesCount" : 23,
+            "publishedAt" : "2019-05-27T18:37:04.000Z",
+            "state" : "none",
+            "title" : "I can't believe we're FINALLY playing together! Pokimane Fortnite Squads!",
+            "views" : 694052
+        }
+    },
+    {
+        "id": "2",
+        "streamer" : {
+            "id" : "UCNF0LEQ2abMr0PAX3cfkAMg",
+            "avatar" : "https://yt3.ggpht.com/a/AGF-l79yosB52QYhIH17R3J8A_aEf49ybSq8T2dD1w=s288-mo-c-c0xffffffff-rj-k-no",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 1900,
+            "following" : false,
+            "likes" : 1700,
+            "name" : "DrLupo"
+        },
+        "stream" : {
+            "id" : "bkIgdACynng",
+            "likes" : 1700,
+            "messagesCount" : 21,
+            "publishedAt" : "2019-05-27T18:32:43.000Z",
+            "state" : "live",
+            "title" : "Fortnite date night with MrsDrLupo!",
+            "views" : 69463
+        }
+    },
+    {
+        "id": "3",
+        "streamer" : {
+            "id" : "UC0ZAJJviXm5Pqx7d8OsRLHw",
+            "avatar" : "https://i.ytimg.com/vi/EXh0qU4eQHM/default.jpg",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 9100,
+            "following" : false,
+            "likes" : 1700,
+            "name" : "LAZY GAMER"
+        },
+        "stream" : {
+            "id" : "EXh0qU4eQHM",
+            "likes" : 1700,
+            "messagesCount" : 34,
+            "publishedAt" : "2019-05-27T18:31:35.000Z",
+            "state" : "none",
+            "title" : "DYNAMO GAMING LIVE STREAM | SEASON 7 ROYAL PASS GIVEAWAY | LIKE , SUBCRIBE AND PRESS BELL ICON |",
+            "views" : 500
+        }
+    },
+    {
+        "id": "4",
+        "streamer" : {
+            "id" : "UCd-S8xYZkVU_85tX685MW0g",
+            "avatar" : "https://i.ytimg.com/vi/_lYgNStv7Fs/default.jpg",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 2100,
+            "following" : false,
+            "likes" : 1700,
+            "name" : "Fortnite Gaming"
+        },
+        "stream" : {
+            "id" : "_lYgNStv7Fs",
+            "likes" : 1700,
+            "messagesCount" : 25,
+            "publishedAt" : "2019-05-27T18:31:58.000z",
+            "state" : "none",
+            "title" : "Fortnite Gaming Live Stream",
+            "views" : 500
+        }
+    },
+    {
+        "id": "5",
+        "streamer" : {
+            "id" : "UChzFlgz1JzZILl_9LCmonOg",
+            "avatar" : "https://i.ytimg.com/vi/6YXX_u0t8qQ/default.jpg",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 5600,
+            "following" : false,
+            "likes" : 1700,
+            "name" : "Beast gamer Live"
+        },
+        "stream" : {
+            "id" : "6YXX_u0t8qQ",
+            "likes" : 1700,
+            "messagesCount" : 43,
+            "publishedAt" : "2019-05-27T18:32:14.000Z",
+            "state" : "live",
+            "title" : "Pubg Mobile gaming | Beast Gamer Live |  Live Stream",
+            "views" : 500
+        }
+    },
+    {
+        "id": "6",
+        "streamer" : {
+            "id" : "UCL9zu0FQ5XAwwTfIGdW1rHg",
+            "avatar" : "https://i.ytimg.com/vi/LvLqq459iDw/default.jpg",
+            "badge" : 5,
+            "favorite" : false,
+            "followers" : 2100,
+            "following" : false,
+            "likes" : 1700,
+            "name" : "Keyur gaming"
+        },
+        "stream" : {
+            "id" : "LvLqq459iDw",
+            "likes" : 1700,
+            "messagesCount" : 34,
+            "publishedAt" : "2019-05-27T18:22:51.000Z",
+            "state" : "live",
+            "title" : "Keyur gaming Live Stream",
+            "views" : 500
+        }
+    }
+]

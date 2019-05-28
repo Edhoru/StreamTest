@@ -51,12 +51,17 @@ extension BroadcastViewController: BroadcastPresentable {
 
 extension BroadcastViewController: BroadcastViewControllable {
     
-    func displayChildren(player: ViewControllable) {
-        guard let playerView = player.uiviewController.view else {
+    func displayChildren(player: ViewControllable,
+                         chat: ViewControllable) {
+        guard let playerView = player.uiviewController.view,
+        let chatView = chat.uiviewController.view else {
                 return
         }
         playerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(playerView)       
+        view.addSubview(playerView)
+        
+        chatView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(chatView)
         
         view.addSubview(titleView)
         view.addSubview(streamerView)
@@ -72,7 +77,12 @@ extension BroadcastViewController: BroadcastViewControllable {
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
+            chatView.topAnchor.constraint(equalTo: playerView.bottomAnchor),
+            chatView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            chatView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             streamerView.heightAnchor.constraint(equalToConstant: 80),
+            streamerView.topAnchor.constraint(equalTo: chatView.bottomAnchor),
             streamerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             streamerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             streamerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
