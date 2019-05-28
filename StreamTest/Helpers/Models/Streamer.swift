@@ -16,5 +16,6 @@ struct Streamer: Codable {
     var favorite: Bool
     var following: Bool
     var name: String
+    var followers: Int
     
 }

@@ -18,6 +18,7 @@ struct Stream: Codable {
     
     var id: String
     var likes: Int
+    var messagesCount: Int
     var publishedAt: String
     var state: State
     var title: String

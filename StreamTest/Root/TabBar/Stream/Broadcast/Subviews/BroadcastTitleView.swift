@@ -61,13 +61,13 @@ class BroadcastTitleView: UIView {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         
-        var amountExtension = " views"
+        var viewsExtension = " views"
         var viewsReduced = views
         if views > 1000000 {
-            amountExtension = "m views"
+            viewsExtension = "m views"
             viewsReduced = views / 1000000
         } else if views > 1000 {
-            amountExtension = "k views"
+            viewsExtension = "k views"
             viewsReduced = views / 1000
         }
         let viewsNumber = NSNumber(value: viewsReduced)
@@ -83,7 +83,7 @@ class BroadcastTitleView: UIView {
             timePassed = date.timeAgoDisplay
         }
         
-        viewsLabel.text = "\(viewsFormatted)\(amountExtension) \(timePassed)"
+        viewsLabel.text = "\(viewsFormatted)\(viewsExtension) \(timePassed)"
     }
 
 }

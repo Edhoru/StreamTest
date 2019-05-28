@@ -30,6 +30,12 @@ final class BroadcastViewController: UIViewController {
         return view
     }()
     
+    var streamerView: StreamerView = {
+        let view = StreamerView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +59,7 @@ extension BroadcastViewController: BroadcastViewControllable {
         view.addSubview(playerView)       
         
         view.addSubview(titleView)
+        view.addSubview(streamerView)
         
         NSLayoutConstraint.activate([
             titleView.heightAnchor.constraint(equalToConstant: 80),
@@ -64,6 +71,11 @@ extension BroadcastViewController: BroadcastViewControllable {
             playerView.topAnchor.constraint(equalTo: titleView.bottomAnchor),
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            streamerView.heightAnchor.constraint(equalToConstant: 80),
+            streamerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            streamerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            streamerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             ])
         
     }
@@ -72,6 +84,9 @@ extension BroadcastViewController: BroadcastViewControllable {
         titleView.setup(title: broadcast.stream.title,
                         views: broadcast.stream.views,
                         publishedAt: broadcast.stream.publishedAt)
+        
+        streamerView.setup(streamer: broadcast.streamer,
+                           messageCount: broadcast.stream.messagesCount)
     }
     
 }
