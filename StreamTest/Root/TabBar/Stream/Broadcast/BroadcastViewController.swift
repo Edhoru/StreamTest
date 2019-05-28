@@ -18,7 +18,17 @@ protocol BroadcastPresentableListener: class {
 
 final class BroadcastViewController: UIViewController {
 
+    //RIBs
     weak var listener: BroadcastPresentableListener?
+    
+    //Properties
+    
+    //UI
+    var titleView: BroadcastTitleView = {
+        let view = BroadcastTitleView(title: "aa", views: 25, publishedAt: "asd")
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +52,17 @@ extension BroadcastViewController: BroadcastViewControllable {
         view.addSubview(playerView)
         
         
-        
+        view.addSubview(titleView)
         
         
         NSLayoutConstraint.activate([
+            titleView.heightAnchor.constraint(equalToConstant: 80),
+            titleView.topAnchor.constraint(equalTo: view.topAnchor),
+            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            titleView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             playerView.heightAnchor.constraint(equalToConstant: 300),
-            playerView.topAnchor.constraint(equalTo: view.topAnchor, constant:  80),
+            playerView.topAnchor.constraint(equalTo: titleView.bottomAnchor),
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ])

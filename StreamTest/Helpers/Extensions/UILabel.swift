@@ -11,15 +11,21 @@ import UIKit
 extension UILabel {
     
     func styleCell() {
-        self.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        self.font = UIFont(name: "DINAlternate-Bold", size: 13)
         self.textAlignment = .center
         self.textColor = .secondary
     }
     
     func styleBadge() {
         self.backgroundColor = .red
-        self.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        self.font = UIFont(name: "DINAlternate-Bold", size: 12)
         self.textAlignment = .center
         self.textColor = .secondary
     }
+    
+    func style(size: CGFloat) {
+        self.font = UIFont(name: "DINAlternate-Bold", size: size)
+        self.textColor = .secondary
+    }
+    
 }

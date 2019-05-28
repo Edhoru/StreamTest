@@ -18,6 +18,7 @@ extension UIColor {
     static let badge = UIColor(red: 245/255, green: 87/255, blue: 71/255, alpha: 1.0)
     static let off = UIColor.darkGray
     static let on = UIColor(red: 253/255, green: 175/255, blue: 93/255, alpha: 1.0)
+    static let onDark = UIColor(red: 51/255, green: 53/255, blue: 50/255, alpha: 1.0)
     static let secondary = UIColor.white
     
 }

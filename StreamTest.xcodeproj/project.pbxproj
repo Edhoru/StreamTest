@@ -10,6 +10,8 @@
 		4618709622938A9E008A2CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4618709522938A9E008A2CD7 /* AppDelegate.swift */; };
 		4618709D22938A9F008A2CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4618709C22938A9F008A2CD7 /* Assets.xcassets */; };
 		461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618709E22938A9F008A2CD7 /* LaunchScreen.storyboard */; };
+		4626BA92229CCA8700505854 /* BroadcastTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA91229CCA8700505854 /* BroadcastTitleView.swift */; };
+		4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA93229CD4CC00505854 /* LikesLeftView.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -58,6 +60,8 @@
 		4618709C22938A9F008A2CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618709F22938A9F008A2CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		461870A122938A9F008A2CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4626BA91229CCA8700505854 /* BroadcastTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastTitleView.swift; sourceTree = "<group>"; };
+		4626BA93229CD4CC00505854 /* LikesLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesLeftView.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 				466C72AF2299A40800F3CC8A /* View.xib */,
 			);
 			path = StreamTest;
+			sourceTree = "<group>";
+		};
+		4626BA90229CCA6500505854 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4626BA91229CCA8700505854 /* BroadcastTitleView.swift */,
+				4626BA93229CD4CC00505854 /* LikesLeftView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		4667D03F22939BE900B67877 /* Helpers */ = {
@@ -233,6 +246,7 @@
 		4667D0472293BA1D00B67877 /* Broadcast */ = {
 			isa = PBXGroup;
 			children = (
+				4626BA90229CCA6500505854 /* Subviews */,
 				466C729822995A2300F3CC8A /* BroadcastRouter.swift */,
 				466C729922995A2300F3CC8A /* BroadcastViewController.swift */,
 				466C729A22995A2300F3CC8A /* BroadcastBuilder.swift */,
@@ -501,6 +515,7 @@
 				4667D0622293BD8A00B67877 /* TabBarInteractor.swift in Sources */,
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
+				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,
 				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
 				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,
@@ -514,6 +529,7 @@
 				466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */,
 				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
 				4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */,
+				4626BA92229CCA8700505854 /* BroadcastTitleView.swift in Sources */,
 				466C7294229959F900F3CC8A /* StreamRouter.swift in Sources */,
 				466C72BA229A51B100F3CC8A /* PlayerInteractor.swift in Sources */,
 				4667D0572293BAB700B67877 /* AppComponent.swift in Sources */,
