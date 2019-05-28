@@ -16,6 +16,7 @@ protocol BroadcastInteractable: Interactable, PlayerListener {
 protocol BroadcastViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
     func displayChildren(player: ViewControllable)
+    func display(broadcast: Broadcast)
 }
 
 final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastViewControllable> {
@@ -50,6 +51,7 @@ extension BroadcastRouter: BroadcastRouting {
     
     func set(broadcast: Broadcast) {
         player.routeToPlayer(with: broadcast)
+        viewController.display(broadcast: broadcast)
     }
     
 }

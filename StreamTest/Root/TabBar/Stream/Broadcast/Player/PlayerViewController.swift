@@ -50,19 +50,20 @@ final class PlayerViewController: UIViewController {
 extension PlayerViewController: PlayerPresentable {
 }
 
+
 extension PlayerViewController: PlayerViewControllable {
     
     func embed(_ broadcast: Broadcast) {        
         guard let url = broadcast.stream.videoUrl else { return }
-        
+
         let player = AVPlayer(url: url)
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.view.bounds
         playerLayer.videoGravity = .resizeAspect
         playerLayer.needsDisplayOnBoundsChange = true
-        
+
         player.isMuted = true
-        
+
         self.view.layer.addSublayer(playerLayer)
         player.play()
     }

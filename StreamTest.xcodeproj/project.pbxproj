@@ -12,6 +12,8 @@
 		461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618709E22938A9F008A2CD7 /* LaunchScreen.storyboard */; };
 		4626BA92229CCA8700505854 /* BroadcastTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA91229CCA8700505854 /* BroadcastTitleView.swift */; };
 		4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA93229CD4CC00505854 /* LikesLeftView.swift */; };
+		4626BA96229CFF4C00505854 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA95229CFF4C00505854 /* Date.swift */; };
+		4626BA98229CFFCD00505854 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA97229CFFCD00505854 /* Time.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -62,6 +64,8 @@
 		461870A122938A9F008A2CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4626BA91229CCA8700505854 /* BroadcastTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastTitleView.swift; sourceTree = "<group>"; };
 		4626BA93229CD4CC00505854 /* LikesLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesLeftView.swift; sourceTree = "<group>"; };
+		4626BA95229CFF4C00505854 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4626BA97229CFFCD00505854 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -246,11 +250,11 @@
 		4667D0472293BA1D00B67877 /* Broadcast */ = {
 			isa = PBXGroup;
 			children = (
-				4626BA90229CCA6500505854 /* Subviews */,
 				466C729822995A2300F3CC8A /* BroadcastRouter.swift */,
 				466C729922995A2300F3CC8A /* BroadcastViewController.swift */,
 				466C729A22995A2300F3CC8A /* BroadcastBuilder.swift */,
 				466C729B22995A2300F3CC8A /* BroadcastInteractor.swift */,
+				4626BA90229CCA6500505854 /* Subviews */,
 				4667D04A2293BA3B00B67877 /* Ad */,
 				4667D0492293BA3500B67877 /* Chat */,
 				4667D0482293BA3000B67877 /* Player */,
@@ -296,6 +300,7 @@
 			children = (
 				4667D0592293BC1E00B67877 /* UIColor.swift */,
 				466C72B12299D86600F3CC8A /* UILabel.swift */,
+				4626BA95229CFF4C00505854 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				466C72C0229C563000F3CC8A /* Broadcast.swift */,
 				466C72C2229C563A00F3CC8A /* Stream.swift */,
 				466C72C4229C564400F3CC8A /* Streamer.swift */,
+				4626BA97229CFFCD00505854 /* Time.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,11 +526,13 @@
 				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
 				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
+				4626BA96229CFF4C00505854 /* Date.swift in Sources */,
 				466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */,
 				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
 				466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */,
 				466C7295229959F900F3CC8A /* StreamViewController.swift in Sources */,
 				466C72B7229A51B100F3CC8A /* PlayerRouter.swift in Sources */,
+				4626BA98229CFFCD00505854 /* Time.swift in Sources */,
 				466C72B22299D86600F3CC8A /* UILabel.swift in Sources */,
 				466C729F22995A2300F3CC8A /* BroadcastInteractor.swift in Sources */,
 				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
