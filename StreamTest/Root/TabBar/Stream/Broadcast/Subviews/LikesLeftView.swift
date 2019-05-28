@@ -24,7 +24,7 @@ class LikesLeftView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.style(size: 17)
         label.textColor = .on
-        label.text = "13k"
+        label.text = UserDefaults.standard.likesToGive.abbreviate()
         label.adjustsFontSizeToFitWidth = true
         label.sizeToFit()
         return label

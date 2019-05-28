@@ -14,8 +14,9 @@ struct Streamer: Codable {
     var avatar: String
     var badge: Int
     var favorite: Bool
-    var following: Bool
-    var name: String
     var followers: Int
+    var following: Bool
+    var likes: Int
+    var name: String
     
 }

@@ -57,33 +57,15 @@ class BroadcastTitleView: UIView {
 
         titleLabel.text = title
         
-        //Format the number of views
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        
-        var viewsExtension = " views"
-        var viewsReduced = views
-        if views > 1000000 {
-            viewsExtension = "m views"
-            viewsReduced = views / 1000000
-        } else if views > 1000 {
-            viewsExtension = "k views"
-            viewsReduced = views / 1000
-        }
-        let viewsNumber = NSNumber(value: viewsReduced)
-        guard let viewsFormatted = formatter.string(from: viewsNumber) else { return }
-        
-        //Format the date
+        //Format the number of views & date
         var timePassed = ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         if let date = dateFormatter.date(from: publishedAt) {
-            print(date)
-            
             timePassed = date.timeAgoDisplay
         }
         
-        viewsLabel.text = "\(viewsFormatted)\(viewsExtension) \(timePassed)"
+        viewsLabel.text = "\(views.abbreviate()) - \(timePassed)"
     }
 
 }

@@ -8,6 +8,7 @@
             "favorite" : true,
             "followers" : 8900,
             "following" : false,
+            "likes" : 101000,
             "name" : "Ninja"
         },
         "stream" : {
@@ -29,6 +30,7 @@
             "favorite" : false,
             "followers" : 8500,
             "following" : false,
+            "likes" : 25000,
             "name" : "Pokimane"
         },
         "stream" : {
@@ -50,6 +52,7 @@
             "favorite" : false,
             "followers" : 1900,
             "following" : false,
+            "likes" : 1700,
             "name" : "DrLupo"
         },
         "stream" : {
@@ -71,6 +74,7 @@
             "favorite" : false,
             "followers" : 9100,
             "following" : false,
+            "likes" : 1700,
             "name" : "LAZY GAMER"
         },
         "stream" : {
@@ -92,6 +96,7 @@
             "favorite" : false,
             "followers" : 2100,
             "following" : false,
+            "likes" : 1700,
             "name" : "Fortnite Gaming"
         },
         "stream" : {
@@ -113,6 +118,7 @@
             "favorite" : false,
             "followers" : 5600,
             "following" : false,
+            "likes" : 1700,
             "name" : "Beast gamer Live"
         },
         "stream" : {
@@ -134,6 +140,7 @@
             "favorite" : false,
             "followers" : 2100,
             "following" : false,
+            "likes" : 1700,
             "name" : "Keyur gaming"
         },
         "stream" : {

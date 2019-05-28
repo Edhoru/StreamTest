@@ -55,22 +55,42 @@ class StreamerView: UIView {
         return button
     }()
     
-    var likesLeftView: LikesLeftView = {
-        let view = LikesLeftView(frame: .zero)
-        return view
+    var likeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.setImage(#imageLiteral(resourceName: "star_big").withRenderingMode(.alwaysTemplate), for: .normal)
+        button.imageView?.tintColor = .on
+        button.layer.cornerRadius = 28
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
+        return button
+    }()
+    
+    var likeLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.style(size: 15)
+        label.textColor = .on
+        label.textAlignment = .center
+        return label
     }()
     
     func setup(streamer: Streamer, messageCount: Int) {
         backgroundColor = .background
         
+        nameLabel.text = streamer.name
+        followersLabel.text = "\(streamer.followers.abbreviate()) followers"
         commentsButton.custom(title: "\(messageCount)")
+        likeLabel.text = "\(streamer.likes.abbreviate())"
         
         addSubview(avatarImageView)
         addSubview(nameLabel)
         addSubview(followersLabel)
         addSubview(shareButton)
         addSubview(commentsButton)
-        addSubview(likesLeftView)
+        addSubview(likeButton)
+        addSubview(likeLabel)
         
         NSLayoutConstraint.activate([
             avatarImageView.heightAnchor.constraint(equalToConstant: Constants.avatar),
@@ -96,11 +116,16 @@ class StreamerView: UIView {
             commentsButton.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor),
             commentsButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor, constant: 8),
             
-            likesLeftView.leadingAnchor.constraint(equalTo: commentsButton.trailingAnchor, constant: 8),
-            likesLeftView.heightAnchor.constraint(equalToConstant: 36),
-            likesLeftView.widthAnchor.constraint(equalToConstant: 68),
-            likesLeftView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            likesLeftView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            likeButton.topAnchor.constraint(equalTo: topAnchor),
+            likeButton.heightAnchor.constraint(equalToConstant: 56),
+            likeButton.widthAnchor.constraint(equalToConstant: 56),
+            likeButton.leadingAnchor.constraint(equalTo: commentsButton.trailingAnchor, constant: 16),
+            likeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            likeLabel.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 8),
+            likeLabel.leadingAnchor.constraint(equalTo: likeButton.leadingAnchor),
+            likeLabel.trailingAnchor.constraint(equalTo: likeButton.trailingAnchor),
+            likeLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         
         if let url = URL(string: streamer.avatar) {
@@ -111,28 +136,6 @@ class StreamerView: UIView {
                 }
             }
         }
-        
-        nameLabel.text = streamer.name
-        
-        //Format the number of followers
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        
-        let followers = streamer.followers
-        var followersExtension = " followers"
-        var followersReduced = followers
-        if followers > 1000000 {
-            followersExtension = "m followers"
-            followersReduced = followers / 1000000
-        } else if followers > 1000 {
-            followersExtension = "k followers"
-            followersReduced = followers / 1000
-        }
-        let followersNumber = NSNumber(value: followersReduced)
-        guard let followersFormatted = formatter.string(from: followersNumber) else { return }
-        
-        followersLabel.text = "\(followersFormatted) \(followersExtension)"
-
     }
     
     //Actions
@@ -142,6 +145,10 @@ class StreamerView: UIView {
     }
     
     @objc func commentsAction() {
+        
+    }
+    
+    @objc func likeAction() {
         
     }
     
