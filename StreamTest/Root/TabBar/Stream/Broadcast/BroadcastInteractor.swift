@@ -17,6 +17,7 @@ protocol BroadcastRouting: ViewableRouting {
 protocol BroadcastPresentable: Presentable {
     var listener: BroadcastPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func updateLikeCount()
 }
 
 protocol BroadcastListener: class {
@@ -38,10 +39,17 @@ final class BroadcastInteractor: PresentableInteractor<BroadcastPresentable>, Br
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
+        NotificationCenter.default.addObserver(self, selector: #selector(likeLogic), name: .videoLiked, object: nil)
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func likeLogic() {
+        UserDefaults.standard.likesToGive -= 1
+        presenter.updateLikeCount()
     }
 }

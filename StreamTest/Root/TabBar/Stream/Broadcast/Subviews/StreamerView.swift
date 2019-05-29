@@ -149,6 +149,10 @@ class StreamerView: UIView {
     }
     
     @objc func likeAction() {
+        guard UserDefaults.standard.likesToGive > 0 else { return }
+        
+        NotificationCenter.default.post(name: .videoLiked, object: nil)
+        
         let pulse = Pulsing(numberOfPulses: 1, radius: 120, position: likeButton.center)
         pulse.animationDuration = 0.8
         
@@ -158,7 +162,6 @@ class StreamerView: UIView {
         liking.animationDuration = 1.5
         
         layer.insertSublayer(liking, below: likeButton.layer)
-        
     }
     
 }

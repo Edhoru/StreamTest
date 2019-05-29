@@ -24,16 +24,21 @@ class LikesLeftView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.style(size: 17)
         label.textColor = .on
-        label.text = UserDefaults.standard.likesToGive.abbreviate()
         label.adjustsFontSizeToFitWidth = true
         label.sizeToFit()
         return label
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(restoreLikes))
+        self.addGestureRecognizer(tapGesture)
+        
         translatesAutoresizingMaskIntoConstraints = false
+        
+        display()
         
         backgroundColor = .onDark
         layer.cornerRadius = 5
@@ -54,6 +59,16 @@ class LikesLeftView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func display() {
+        likesLabel.text = UserDefaults.standard.likesToGive.abbreviate()
+    }
+    
+    //Actions
+    @objc func restoreLikes() {
+        UserDefaults.standard.likesToGive = 100
+        display()
     }
     
 }

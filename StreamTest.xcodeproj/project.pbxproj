@@ -32,6 +32,7 @@
 		4626BAC0229EB27200505854 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BABF229EB27200505854 /* LikeButton.swift */; };
 		4626BAC2229ED1C200505854 /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC1229ED1C200505854 /* Pulsing.swift */; };
 		4626BAC5229EDD0800505854 /* Liking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC4229EDD0800505854 /* Liking.swift */; };
+		4626BAC8229EF3A200505854 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC7229EF3A200505854 /* Notification.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -102,6 +103,7 @@
 		4626BABF229EB27200505854 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		4626BAC1229ED1C200505854 /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		4626BAC4229EDD0800505854 /* Liking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liking.swift; sourceTree = "<group>"; };
+		4626BAC7229EF3A200505854 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -216,14 +218,21 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		4626BAC9229EF8F600505854 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		4667D03F22939BE900B67877 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				4626BAC3229ED96000505854 /* Animations */,
 				4680D9432295B4B80064C026 /* Components */,
 				466C72BD229B7FE600F3CC8A /* Data */,
-				4680D9422295B4AD0064C026 /* Models */,
 				4667D0582293BC0E00B67877 /* Extensions */,
+				4680D9422295B4AD0064C026 /* Models */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,7 +257,7 @@
 				4667D05D2293BD8A00B67877 /* TabBarBuilder.swift */,
 				4667D05E2293BD8A00B67877 /* TabBarInteractor.swift */,
 				4680D93F2295B4190064C026 /* Subviews */,
-				4667D0442293B99400B67877 /* Notifications */,
+				4626BAC9229EF8F600505854 /* Notifications */,
 				4667D0452293B9A500B67877 /* Profile */,
 				4667D0432293B98700B67877 /* Search */,
 				4667D04222939C0C00B67877 /* Stream */,
@@ -274,13 +283,6 @@
 			children = (
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		4667D0442293B99400B67877 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Notifications;
 			sourceTree = "<group>";
 		};
 		4667D0452293B9A500B67877 /* Profile */ = {
@@ -358,13 +360,14 @@
 		4667D0582293BC0E00B67877 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4667D0592293BC1E00B67877 /* UIColor.swift */,
-				466C72B12299D86600F3CC8A /* UILabel.swift */,
 				4626BA95229CFF4C00505854 /* Date.swift */,
 				4626BA9D229DB66B00505854 /* Int.swift */,
-				4626BA9F229DBBD800505854 /* UserDefaults.swift */,
-				4626BAA7229DDB4700505854 /* String.swift */,
+				4626BAC7229EF3A200505854 /* Notification.swift */,
 				4626BABC229E261B00505854 /* NSAttributedString.swift */,
+				4626BAA7229DDB4700505854 /* String.swift */,
+				4667D0592293BC1E00B67877 /* UIColor.swift */,
+				466C72B12299D86600F3CC8A /* UILabel.swift */,
+				4626BA9F229DBBD800505854 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				4667D0532293BA8300B67877 /* RootViewController.swift in Sources */,
 				466C72AC229972FB00F3CC8A /* Suggestion.swift in Sources */,
 				466C72A622995A4D00F3CC8A /* SuggestionsBuilder.swift in Sources */,
+				4626BAC8229EF3A200505854 /* Notification.swift in Sources */,
 				466C72C5229C564400F3CC8A /* Streamer.swift in Sources */,
 				466C72C8229C70FB00F3CC8A /* ImageService.swift in Sources */,
 				4626BAA0229DBBD800505854 /* UserDefaults.swift in Sources */,
