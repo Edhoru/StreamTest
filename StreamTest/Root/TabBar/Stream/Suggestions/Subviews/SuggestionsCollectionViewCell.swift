@@ -10,6 +10,11 @@ import UIKit
 
 class SuggestionsCollectionViewCell: UICollectionViewCell {
     
+    enum Layout {
+        case big
+        case small
+    }
+    
     //Properties
     private enum Constants {
         static let avatar: CGFloat = 37
@@ -50,11 +55,12 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private var badgeView: UILabel = {
+    private var badgeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.styleBadge()
+        label.styleBadge(size: 18)
         label.layer.cornerRadius = Constants.badge / 2
+        label.adjustsFontSizeToFitWidth = true
         label.clipsToBounds = true
         return label
     }()
@@ -65,7 +71,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         addSubview(stateCircleView)
         addSubview(avatarImageView)
         addSubview(nameLabel)
-        addSubview(badgeView)
+        addSubview(badgeLabel)
         
         NSLayoutConstraint.activate([
             stateCircleView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.space),
@@ -85,10 +91,10 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            badgeView.heightAnchor.constraint(equalToConstant: Constants.badge),
-            badgeView.widthAnchor.constraint(equalTo: badgeView.heightAnchor),
-            badgeView.topAnchor.constraint(equalTo: stateCircleView.topAnchor),
-            badgeView.trailingAnchor.constraint(equalTo: stateCircleView.trailingAnchor)
+            badgeLabel.heightAnchor.constraint(equalTo: stateCircleView.heightAnchor, multiplier: 0.33),
+            badgeLabel.widthAnchor.constraint(equalTo: badgeLabel.heightAnchor),
+            badgeLabel.topAnchor.constraint(equalTo: stateCircleView.topAnchor),
+            badgeLabel.trailingAnchor.constraint(equalTo: stateCircleView.trailingAnchor)
             ])
     }
     
@@ -96,7 +102,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ broadcast: Broadcast) {
+    func setup(_ broadcast: Broadcast, layout: Layout) {
         backgroundColor = .background
         
         stateSize = self.bounds.width - (Constants.stateXSpace * 2)
@@ -104,13 +110,18 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         stateCircleView.layer.cornerRadius = stateSize / 2
         avatarImageView.layer.cornerRadius = (self.bounds.width - (Constants.avatarXSpace * 2)) / 2
         
+        badgeLabel.layer.cornerRadius = (stateSize / 3) / 2
+        if layout == .small {
+            badgeLabel.styleBadge(size: 12)
+        }        
+        
         setupAvatar(with: broadcast.streamer.avatar)
         self.broadcast = broadcast
         
         nameLabel.text = broadcast.streamer.name
         nameLabel.textColor = broadcast.stream.state == .none ? .darkGray : broadcast.stream.state == .live ? .gray : .secondary
-        badgeView.text = broadcast.stream.state == .upcoming ? "" : "\(broadcast.streamer.badge)"
-        badgeView.backgroundColor = broadcast.stream.state == .upcoming ? .secondary : .badge
+        badgeLabel.text = broadcast.stream.state == .upcoming ? "" : "\(broadcast.streamer.badge)"
+        badgeLabel.backgroundColor = broadcast.stream.state == .upcoming ? .secondary : .badge
         
         setStateView()
     }

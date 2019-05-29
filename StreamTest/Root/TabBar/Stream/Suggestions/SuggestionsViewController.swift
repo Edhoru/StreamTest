@@ -23,6 +23,7 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
     
     //Properties
     var broadcasts: [Broadcast] = []
+    var cellLayout: SuggestionsCollectionViewCell.Layout = .big
     
     //UI
     var collectionView: UICollectionView = {
@@ -92,7 +93,7 @@ extension SuggestionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let broadcast = broadcasts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SuggestionsCollectionViewCell
-        cell.setup(broadcast)
+        cell.setup(broadcast, layout: cellLayout)
         return cell
     }
     
@@ -104,11 +105,11 @@ extension SuggestionsViewController: UICollectionViewDelegate {
         let broadcast = broadcasts[indexPath.row]
         listener?.select(broadcast: broadcast)
         
-        DispatchQueue.main.async {
-            if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout,
-                layout.scrollDirection == .vertical {
-                self.collectionView.collectionViewLayout = self.minFlowLayout
-                
+        if self.cellLayout == .big {
+            self.cellLayout = .small
+            self.collectionView.collectionViewLayout = self.minFlowLayout
+            
+            DispatchQueue.main.async {
                 collectionView.reloadData()
                 UIView.animate(withDuration: 0.3, animations: {
                     collectionView.layoutSubviews()

@@ -16,9 +16,9 @@ extension UILabel {
         self.textColor = .secondary
     }
     
-    func styleBadge() {
+    func styleBadge(size: CGFloat) {
         self.backgroundColor = .red
-        self.font = UIFont(name: "DINAlternate-Bold", size: 12)
+        self.font = UIFont(name: "DINAlternate-Bold", size: size)
         self.textAlignment = .center
         self.textColor = .secondary
     }
