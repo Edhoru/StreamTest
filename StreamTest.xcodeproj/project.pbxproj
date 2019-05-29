@@ -28,6 +28,7 @@
 		4626BAB9229E0EC300505854 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAB8229E0EC300505854 /* Comment.swift */; };
 		4626BABA229E0ED800505854 /* CommentsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAB1229DF35200505854 /* CommentsDataService.swift */; };
 		4626BABB229E0EEC00505854 /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAB4229E05E700505854 /* CommentCollectionViewCell.swift */; };
+		4626BABD229E261B00505854 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BABC229E261B00505854 /* NSAttributedString.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -94,6 +95,7 @@
 		4626BAB4229E05E700505854 /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4626BAB6229E0EB000505854 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
 		4626BAB8229E0EC300505854 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4626BABC229E261B00505854 /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				4626BA9D229DB66B00505854 /* Int.swift */,
 				4626BA9F229DBBD800505854 /* UserDefaults.swift */,
 				4626BAA7229DDB4700505854 /* String.swift */,
+				4626BABC229E261B00505854 /* NSAttributedString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				4626BABB229E0EEC00505854 /* CommentCollectionViewCell.swift in Sources */,
 				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,
+				4626BABD229E261B00505854 /* NSAttributedString.swift in Sources */,
 				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
 				4626BAAD229DDCF900505854 /* ChatRouter.swift in Sources */,
 				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,

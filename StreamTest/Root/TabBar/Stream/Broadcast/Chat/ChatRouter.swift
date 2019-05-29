@@ -17,7 +17,6 @@ protocol ChatInteractable: Interactable {
 
 protocol ChatViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
-    func set(stream: Stream)
 }
 
 final class ChatRouter: ViewableRouter<ChatInteractable, ChatViewControllable> {

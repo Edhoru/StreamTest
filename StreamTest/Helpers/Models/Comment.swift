@@ -6,7 +6,7 @@
 //  Copyright © 2019 Huerdo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Comment: Codable {
     var id: String
@@ -25,6 +25,27 @@ struct Comment: Codable {
         get {
             return publishedAt.jsonDate() ?? Date()
         }
+    }
+    
+}
+
+extension Comment {
+    
+    func display() -> NSMutableAttributedString {
+        let fontSize: CGFloat = 14
+        var font = UIFont.systemFont(ofSize: fontSize)
+        if let customFont = UIFont(name: "DINAlternate-Bold", size: fontSize) {
+            font = customFont
+        }
+        
+        let commentAttributed = NSMutableAttributedString(string: self.authorDisplayName,
+                                                          attributes: [NSAttributedString.Key.font: font,
+                                                                       NSAttributedString.Key.foregroundColor: UIColor.secondary])
+        let messageAttributed = NSMutableAttributedString(string: "  \(self.textOriginal)",
+                                                          attributes: [NSAttributedString.Key.font: font,
+                                                                       NSAttributedString.Key.foregroundColor: UIColor.gray])
+        commentAttributed.append(messageAttributed)
+        return commentAttributed
     }
     
 }

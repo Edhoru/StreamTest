@@ -10,11 +10,14 @@ import UIKit
 
 class CommentCollectionViewCell: UICollectionViewCell {
     
+    //Properties
+    var comment: Comment?
     
     //UI
     var commentLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     
@@ -25,8 +28,8 @@ class CommentCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             commentLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            commentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
-            commentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 4),
+            commentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            commentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8),
             commentLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 4)
             ])
     }
@@ -36,8 +39,8 @@ class CommentCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(_ comment: Comment) {
-        print(commentLabel)
-        commentLabel.text = comment.authorDisplayName + "  " + comment.textOriginal
-        print(commentLabel)
+        self.comment = comment
+        commentLabel.attributedText = comment.display()
     }
+    
 }

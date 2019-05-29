@@ -47,7 +47,7 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
     }
     
     private func setupUI() {
-        view.backgroundColor = .red
+        view.backgroundColor = .background
         collectionView.dataSource = self
         collectionView.delegate = self
         
