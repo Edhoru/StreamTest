@@ -13,12 +13,15 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
     //Properties
     private enum Constants {
         static let avatar: CGFloat = 37
+        static let avatarXSpace: CGFloat = 16.5
         static let badge: CGFloat = 17
         static let space: CGFloat = 6
         static let state: CGFloat = 49
+        static let stateXSpace: CGFloat = 10.5
     }
     
     var broadcast: Broadcast?
+    var stateSize: CGFloat = 0
     
     //UI
     private var stateCircleView: UIView = {
@@ -65,13 +68,15 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         addSubview(badgeView)
         
         NSLayoutConstraint.activate([
-            stateCircleView.heightAnchor.constraint(equalToConstant: Constants.state),
-            stateCircleView.widthAnchor.constraint(equalTo: stateCircleView.heightAnchor),
             stateCircleView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.space),
+            stateCircleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.stateXSpace),
+            stateCircleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.stateXSpace),
+            stateCircleView.heightAnchor.constraint(equalTo: stateCircleView.widthAnchor),
             stateCircleView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            avatarImageView.heightAnchor.constraint(equalToConstant: Constants.avatar),
-            avatarImageView.widthAnchor.constraint(equalTo: avatarImageView.heightAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.avatarXSpace),
+            avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.avatarXSpace),
+            avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
             avatarImageView.centerXAnchor.constraint(equalTo: stateCircleView.centerXAnchor),
             avatarImageView.centerYAnchor.constraint(equalTo: stateCircleView.centerYAnchor),
             
@@ -93,6 +98,11 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
     
     func setup(_ broadcast: Broadcast) {
         backgroundColor = .background
+        
+        stateSize = self.bounds.width - (Constants.stateXSpace * 2)
+        
+        stateCircleView.layer.cornerRadius = stateSize / 2
+        avatarImageView.layer.cornerRadius = (self.bounds.width - (Constants.avatarXSpace * 2)) / 2
         
         setupAvatar(with: broadcast.streamer.avatar)
         self.broadcast = broadcast
@@ -122,11 +132,11 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
         guard let state = broadcast?.stream.state else { return }
         
         //Let's draw the circle for the background path
-        let center = CGPoint(x: Constants.state / 2,
-                             y: Constants.state / 2)
+        let center = CGPoint(x: stateSize / 2,
+                             y: stateSize / 2)
         
         let circularPath = UIBezierPath(arcCenter: center,
-                                        radius: Constants.state/2,
+                                        radius: stateSize / 2,
                                         startAngle: CGFloat.pi / 4,
                                         endAngle: CGFloat.pi * 2 + CGFloat.pi / 4,
                                         clockwise: true)
@@ -160,7 +170,7 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
             let gradientLayer = CAGradientLayer()
             gradientLayer.startPoint = CGPoint(x: 0.2, y: 0.2)
             gradientLayer.endPoint = CGPoint(x: 0.8, y: 0.8)
-            gradientLayer.frame = CGRect(x: 0, y: 0, width: 49, height: 49)
+            gradientLayer.frame = CGRect(x: 0, y: 0, width: stateSize, height: stateSize)
             gradientLayer.colors = [UIColor.on.cgColor, UIColor.purple.cgColor]
             gradientLayer.locations = [0.0, 0.9]
             gradientLayer.mask = stateLayer

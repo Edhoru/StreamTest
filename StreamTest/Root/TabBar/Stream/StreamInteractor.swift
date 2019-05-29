@@ -17,6 +17,7 @@ protocol StreamRouting: ViewableRouting {
 protocol StreamPresentable: Presentable {
     var listener: StreamPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func minimizeSuggestions()
 }
 
 protocol StreamListener: class {
@@ -51,6 +52,7 @@ extension StreamInteractor: StreamInteractable {
     
     func prepareFor(broadcast: Broadcast) {
         router?.routeToBroadcast(broadcast)
+        presenter.minimizeSuggestions()
     }    
     
 }

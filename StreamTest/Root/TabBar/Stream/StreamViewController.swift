@@ -16,10 +16,19 @@ protocol StreamPresentableListener: class {
     // interactor class.
 }
 
-final class StreamViewController: TabBarChildViewController, StreamPresentable {
+final class StreamViewController: TabBarChildViewController {
 
+    //RIBS
     weak var listener: StreamPresentableListener?
     
+    //Properties
+    private enum Constants {
+        static let suggestionsHeight: CGFloat = 80
+    }
+    var suggestionsHeightConstraint: NSLayoutConstraint?
+    var suggestionsBottomConstraint: NSLayoutConstraint?
+    
+    //UI
     private var suggestionsContainer: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,18 +52,23 @@ final class StreamViewController: TabBarChildViewController, StreamPresentable {
     private func setupUI() {
         view.backgroundColor = .background
         
-        view.addSubview(suggestionsContainer)
         view.addSubview(broadcastContainer)
+        view.addSubview(suggestionsContainer)
         
         let safeArea = view.safeAreaLayoutGuide
         
+        suggestionsHeightConstraint = suggestionsContainer.heightAnchor.constraint(equalToConstant: Constants.suggestionsHeight)
+        suggestionsHeightConstraint?.isActive = false
+        
+        suggestionsBottomConstraint = suggestionsContainer.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        suggestionsBottomConstraint?.isActive = true
+        
         NSLayoutConstraint.activate([
-            suggestionsContainer.heightAnchor.constraint(equalToConstant: 80),
             suggestionsContainer.topAnchor.constraint(equalTo: safeArea.topAnchor),
             suggestionsContainer.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             suggestionsContainer.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             
-            broadcastContainer.topAnchor.constraint(equalTo: suggestionsContainer.bottomAnchor),
+            broadcastContainer.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Constants.suggestionsHeight),
             broadcastContainer.leadingAnchor.constraint(equalTo:  safeArea.leadingAnchor),
             broadcastContainer.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             broadcastContainer.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
@@ -63,6 +77,19 @@ final class StreamViewController: TabBarChildViewController, StreamPresentable {
     
 }
 
+
+extension StreamViewController: StreamPresentable {
+    
+    func minimizeSuggestions() {
+        self.suggestionsBottomConstraint?.isActive = false
+        self.suggestionsHeightConstraint?.isActive = true
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.view.layoutIfNeeded()
+            self.suggestionsContainer.layoutIfNeeded()
+        })
+    }
+}
 
 extension StreamViewController: StreamViewControllable {
     

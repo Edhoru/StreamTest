@@ -27,9 +27,9 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
     //UI
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 70, height: 80)
+        layout.itemSize = CGSize(width: 140, height: 160)
         layout.minimumInteritemSpacing = 4
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -37,6 +37,24 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
         collectionView.backgroundColor = .background
         collectionView.register(SuggestionsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return collectionView
+    }()
+    
+    var maxFlowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 140, height: 160)
+        layout.minimumInteritemSpacing = 4
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        return layout
+    }()
+    
+    var minFlowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 70, height: 80)
+        layout.minimumInteritemSpacing = 4
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        return layout
     }()
     
     
@@ -85,6 +103,19 @@ extension SuggestionsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let broadcast = broadcasts[indexPath.row]
         listener?.select(broadcast: broadcast)
+        
+        DispatchQueue.main.async {
+            if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout,
+                layout.scrollDirection == .vertical {
+                self.collectionView.collectionViewLayout = self.minFlowLayout
+                
+                collectionView.reloadData()
+                UIView.animate(withDuration: 0.3, animations: {
+                    collectionView.layoutSubviews()
+                    collectionView.layoutIfNeeded()
+                })
+            }
+        }
     }
 }
 
