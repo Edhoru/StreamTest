@@ -18,6 +18,8 @@ class StreamerView: UIView {
         static let state: CGFloat = 49
     }
     
+    var likesGiven: Int = 0
+    
     //UI
     var avatarImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -79,6 +81,7 @@ class StreamerView: UIView {
     func setup(streamer: Streamer, messageCount: Int) {
         backgroundColor = .background
         
+        likesGiven = 0
         nameLabel.text = streamer.name
         followersLabel.text = "\(streamer.followers.abbreviate()) followers"
         commentsButton.custom(title: "\(messageCount)")
@@ -158,7 +161,8 @@ class StreamerView: UIView {
         
         layer.insertSublayer(pulse, below: likeButton.layer)
         
-        let liking = Liking(radius: likeButton.bounds.width / 2, position: likeButton.center, text: "50")
+        likesGiven += 1
+        let liking = Liking(radius: likeButton.bounds.width / 2, position: likeButton.center, text: "\(likesGiven)")
         liking.animationDuration = 1.5
         
         layer.insertSublayer(liking, below: likeButton.layer)
