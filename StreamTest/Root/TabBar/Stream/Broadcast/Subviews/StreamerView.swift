@@ -149,12 +149,16 @@ class StreamerView: UIView {
     }
     
     @objc func likeAction() {
-        print(likeButton.center)
-        print(likeButton.center)
         let pulse = Pulsing(numberOfPulses: 1, radius: 120, position: likeButton.center)
         pulse.animationDuration = 0.8
         
         layer.insertSublayer(pulse, below: likeButton.layer)
+        
+        let liking = Liking(radius: likeButton.bounds.width / 2, position: likeButton.center, text: "50")
+        liking.animationDuration = 1.5
+        
+        layer.insertSublayer(liking, below: likeButton.layer)
+        
     }
     
 }
