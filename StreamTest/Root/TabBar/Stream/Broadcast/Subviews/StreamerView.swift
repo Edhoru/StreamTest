@@ -63,7 +63,7 @@ class StreamerView: UIView {
         button.imageView?.tintColor = .on
         button.layer.cornerRadius = 28
         button.clipsToBounds = true
-        button.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(likeAction), for: .touchDown)
         return button
     }()
     
@@ -149,7 +149,12 @@ class StreamerView: UIView {
     }
     
     @objc func likeAction() {
+        print(likeButton.center)
+        print(likeButton.center)
+        let pulse = Pulsing(numberOfPulses: 1, radius: 120, position: likeButton.center)
+        pulse.animationDuration = 0.8
         
+        layer.insertSublayer(pulse, below: likeButton.layer)
     }
     
 }
