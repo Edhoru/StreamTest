@@ -39,6 +39,7 @@ final class BroadcastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .background
     }
 }
 
@@ -100,3 +101,26 @@ extension BroadcastViewController: BroadcastViewControllable {
     }
     
 }
+
+/*
+subviews 1:  [
+<UIView: 0x10a300000; frame = (0 0; 375 812); autoresize = W+H; layer = <CALayer: 0x2822100a0>>,
+<UIView: 0x10a3001e0; frame = (0 0; 375 812); autoresize = W+H; layer = <CALayer: 0x282210100>>,
+<StreamTest.BroadcastTitleView: 0x10540de00; frame = (0 0; 0 0); layer = <CALayer: 0x2822391a0>>,
+<StreamTest.StreamerView: 0x105411530; frame = (0 0; 0 0); layer = <CALayer: 0x28223aa20>>
+]
+
+
+subviews 2:  [
+<UIView: 0x10a3001e0; frame = (0 380; 375 145); autoresize = W+H; layer = <CALayer: 0x282210100>>,
+<StreamTest.BroadcastTitleView: 0x10540de00; frame = (0 0; 375 80); layer = <CALayer: 0x2822391a0>>,
+<StreamTest.StreamerView: 0x105411530; frame = (0 525; 375 80); layer = <CALayer: 0x28223aa20>>,
+<WKWebView: 0x108010600; frame = (0 80; 375 300); layer = <CALayer: 0x282216e40>>]
+
+subviews 3:  [
+<UIView: 0x10a3001e0; frame = (0 380; 375 145); autoresize = W+H; layer = <CALayer: 0x282210100>>,
+<StreamTest.BroadcastTitleView: 0x10540de00; frame = (0 0; 375 80); layer = <CALayer: 0x2822391a0>>,
+<StreamTest.StreamerView: 0x105411530; frame = (0 525; 375 80); layer = <CALayer: 0x28223aa20>>,
+<WKWebView: 0x108010600; frame = (0 80; 375 300); layer = <CALayer: 0x282216e40>>
+]
+*/

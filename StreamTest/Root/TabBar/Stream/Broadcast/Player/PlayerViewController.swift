@@ -10,6 +10,7 @@ import RIBs
 import RxSwift
 import UIKit
 import AVFoundation
+import WebKit
 
 protocol PlayerPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -26,6 +27,7 @@ final class PlayerViewController: UIViewController {
     var playerLayer: AVPlayerLayer!
     
     //UI
+    var webView: WKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,19 +55,38 @@ extension PlayerViewController: PlayerPresentable {
 
 extension PlayerViewController: PlayerViewControllable {
     
-    func embed(_ broadcast: Broadcast) {        
+    func embed(_ broadcast: Broadcast) {
         guard let url = broadcast.stream.videoUrl else { return }
-
-        let player = AVPlayer(url: url)
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.view.bounds
-        playerLayer.videoGravity = .resizeAspect
-        playerLayer.needsDisplayOnBoundsChange = true
-
-        player.isMuted = true
-
-        self.view.layer.addSublayer(playerLayer)
-        player.play()
+        
+        webView = nil
+        
+        let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.allowsInlineMediaPlayback = true
+        
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        
+        guard let validWebView = webView else { return }
+        validWebView.allowsLinkPreview = true
+        
+        validWebView.frame = view.bounds
+        view.addSubview(validWebView)
+        
+        let myRequest = URLRequest(url: url)
+        validWebView.load(myRequest)
+        return
+        
+        //The backup plan
+        //        guard let url = broadcast.stream.staticVideoUrl else { return }
+        //        let player = AVPlayer(url: url)
+        //        playerLayer = AVPlayerLayer(player: player)
+        //        playerLayer.frame = self.view.bounds
+        //        playerLayer.videoGravity = .resizeAspect
+        //        playerLayer.needsDisplayOnBoundsChange = true
+        //
+        //        player.isMuted = true
+        //
+        //        self.view.layer.addSublayer(playerLayer)
+        //        player.play()
     }
     
 }
