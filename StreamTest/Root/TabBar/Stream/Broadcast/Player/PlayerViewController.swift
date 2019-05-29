@@ -10,7 +10,6 @@ import RIBs
 import RxSwift
 import UIKit
 import AVFoundation
-import WebKit
 
 protocol PlayerPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -27,7 +26,6 @@ final class PlayerViewController: UIViewController {
     var playerLayer: AVPlayerLayer!
     
     //UI
-    var webView: WKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,35 +53,19 @@ extension PlayerViewController: PlayerPresentable {
 
 extension PlayerViewController: PlayerViewControllable {
     
-    func embed(_ broadcast: Broadcast) {
+    func embed(_ broadcast: Broadcast) {        
         guard let url = broadcast.stream.videoUrl else { return }
-        
-        webView = nil
-        
-        let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.allowsInlineMediaPlayback = true
-        
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView?.allowsLinkPreview = true
-        
-        view = webView
-        
-        let myRequest = URLRequest(url: url)
-        webView?.load(myRequest)
-        return
-        
-        //The backup plan
-        //        guard let url = broadcast.stream.staticVideoUrl else { return }
-        //        let player = AVPlayer(url: url)
-        //        playerLayer = AVPlayerLayer(player: player)
-        //        playerLayer.frame = self.view.bounds
-        //        playerLayer.videoGravity = .resizeAspect
-        //        playerLayer.needsDisplayOnBoundsChange = true
-        //
-        //        player.isMuted = true
-        //
-        //        self.view.layer.addSublayer(playerLayer)
-        //        player.play()
+
+        let player = AVPlayer(url: url)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        playerLayer.videoGravity = .resizeAspect
+        playerLayer.needsDisplayOnBoundsChange = true
+
+        player.isMuted = true
+
+        self.view.layer.addSublayer(playerLayer)
+        player.play()
     }
     
 }

@@ -24,7 +24,7 @@ struct Stream: Codable {
     var title: String
     var views: Int
     
-    var staticVideoUrl: URL? {
+    var videoUrl: URL? {
         get {
             //This variable returns apple's video for testing streams
             let fullUrl = "http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8"
@@ -32,18 +32,13 @@ struct Stream: Codable {
         }
     }
     
-    var videoUrlYT: URL? {
-        get {
-            let fullUrl = "https://www.youtube.com/watch?v=\(id)"
-            return URL(string: fullUrl)
-        }
-    }
-    
-    var videoUrl: URL? {
-        get {
-            let fullUrl = "https://www.youtube.com/embed/\(id)?autoplay=1&amp;playsinline=1"
-            return URL(string: fullUrl)
-        }
-    }
+    /*
+    "stream" : {
+    "id" : "Xp7t9fWz62Q",
+    "publishedAt" : "2019-05-25T21:35:19.000Z",
+    "state" : "live",
+    "title" : "Stories Of A Stream Sniper!",
+    "views" : 500
+    }*/
     
 }

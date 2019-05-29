@@ -60,11 +60,7 @@ final class BroadcastRouter: ViewableRouter<BroadcastInteractable, BroadcastView
 extension BroadcastRouter: BroadcastRouting {
     
     func set(broadcast: Broadcast) {
-        //For RIBs
         player.routeToPlayer(with: broadcast)
-        chat.routeToComments(for: broadcast.stream)
-        
-        //For simple views not created from a RIB
         viewController.display(broadcast: broadcast)
     }
     

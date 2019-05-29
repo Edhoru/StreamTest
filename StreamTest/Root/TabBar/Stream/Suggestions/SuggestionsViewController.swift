@@ -25,7 +25,7 @@ final class SuggestionsViewController: UIViewController, SuggestionsViewControll
     var broadcasts: [Broadcast] = []
     
     //UI
-    var collectionView: UICollectionView = {
+    private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 70, height: 80)
         layout.minimumInteritemSpacing = 4

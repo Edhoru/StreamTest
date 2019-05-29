@@ -19,15 +19,13 @@
 		4626BA9E229DB66B00505854 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9D229DB66B00505854 /* Int.swift */; };
 		4626BAA0229DBBD800505854 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BA9F229DBBD800505854 /* UserDefaults.swift */; };
 		4626BAA3229DC3A600505854 /* ads.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAA1229DC3A600505854 /* ads.json */; };
-		4626BAA4229DC3A600505854 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAA2229DC3A600505854 /* comments.json */; };
-		4626BAA6229DDA4200505854 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA5229DDA4200505854 /* Comment.swift */; };
+		4626BAA4229DC3A600505854 /* chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAA2229DC3A600505854 /* chat.json */; };
+		4626BAA6229DDA4200505854 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA5229DDA4200505854 /* ChatMessage.swift */; };
 		4626BAA8229DDB4700505854 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA7229DDB4700505854 /* String.swift */; };
 		4626BAAD229DDCF900505854 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAA9229DDCF900505854 /* ChatRouter.swift */; };
 		4626BAAE229DDCF900505854 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAA229DDCF900505854 /* ChatViewController.swift */; };
 		4626BAAF229DDCF900505854 /* ChatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAB229DDCF900505854 /* ChatBuilder.swift */; };
 		4626BAB0229DDCF900505854 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAAC229DDCF900505854 /* ChatInteractor.swift */; };
-		4626BAB2229DF35200505854 /* CommentsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAB1229DF35200505854 /* CommentsDataService.swift */; };
-		4626BAB5229E05E700505854 /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAB4229E05E700505854 /* CommentCollectionViewCell.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -85,15 +83,13 @@
 		4626BA9D229DB66B00505854 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		4626BA9F229DBBD800505854 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		4626BAA1229DC3A600505854 /* ads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ads.json; sourceTree = "<group>"; };
-		4626BAA2229DC3A600505854 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
-		4626BAA5229DDA4200505854 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4626BAA2229DC3A600505854 /* chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chat.json; sourceTree = "<group>"; };
+		4626BAA5229DDA4200505854 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4626BAA7229DDB4700505854 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		4626BAA9229DDCF900505854 /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
 		4626BAAA229DDCF900505854 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4626BAAB229DDCF900505854 /* ChatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBuilder.swift; sourceTree = "<group>"; };
 		4626BAAC229DDCF900505854 /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
-		4626BAB1229DF35200505854 /* CommentsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDataService.swift; sourceTree = "<group>"; };
-		4626BAB4229E05E700505854 /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -187,14 +183,6 @@
 				4626BA91229CCA8700505854 /* BroadcastTitleView.swift */,
 				4626BA93229CD4CC00505854 /* LikesLeftView.swift */,
 				4626BA99229D030700505854 /* StreamerView.swift */,
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
-		4626BAB3229E05BC00505854 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				4626BAB4229E05E700505854 /* CommentCollectionViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -318,7 +306,6 @@
 				4626BAAA229DDCF900505854 /* ChatViewController.swift */,
 				4626BAAB229DDCF900505854 /* ChatBuilder.swift */,
 				4626BAAC229DDCF900505854 /* ChatInteractor.swift */,
-				4626BAB3229E05BC00505854 /* Subviews */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -379,7 +366,7 @@
 			children = (
 				4626BAA1229DC3A600505854 /* ads.json */,
 				466C72BE229B7FF600F3CC8A /* broadcasts.json */,
-				4626BAA2229DC3A600505854 /* comments.json */,
+				4626BAA2229DC3A600505854 /* chat.json */,
 				466C72C6229C70DA00F3CC8A /* Services */,
 			);
 			path = Data;
@@ -389,7 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				466C72AD2299753C00F3CC8A /* BroadcastsDataService.swift */,
-				4626BAB1229DF35200505854 /* CommentsDataService.swift */,
 				466C72C7229C70FB00F3CC8A /* ImageService.swift */,
 			);
 			path = Services;
@@ -406,12 +392,12 @@
 		4680D9422295B4AD0064C026 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				466C72AB229972FB00F3CC8A /* Suggestion.swift */,
 				466C72C0229C563000F3CC8A /* Broadcast.swift */,
-				4626BAA5229DDA4200505854 /* Comment.swift */,
 				466C72C2229C563A00F3CC8A /* Stream.swift */,
 				466C72C4229C564400F3CC8A /* Streamer.swift */,
-				466C72AB229972FB00F3CC8A /* Suggestion.swift */,
 				4626BA97229CFFCD00505854 /* Time.swift */,
+				4626BAA5229DDA4200505854 /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,7 +491,7 @@
 				466C72BF229B7FF600F3CC8A /* broadcasts.json in Resources */,
 				461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */,
 				466C72B02299A40800F3CC8A /* View.xib in Resources */,
-				4626BAA4229DC3A600505854 /* comments.json in Resources */,
+				4626BAA4229DC3A600505854 /* chat.json in Resources */,
 				4626BAA3229DC3A600505854 /* ads.json in Resources */,
 				4618709D22938A9F008A2CD7 /* Assets.xcassets in Resources */,
 			);
@@ -575,9 +561,7 @@
 				4667D05A2293BC1E00B67877 /* UIColor.swift in Sources */,
 				4626BA9C229DA1AC00505854 /* IconTextButton.swift in Sources */,
 				4680D9412295B4420064C026 /* StreamTabBar.swift in Sources */,
-				4626BAA6229DDA4200505854 /* Comment.swift in Sources */,
-				4626BAB2229DF35200505854 /* CommentsDataService.swift in Sources */,
-				4626BAB5229E05E700505854 /* CommentCollectionViewCell.swift in Sources */,
+				4626BAA6229DDA4200505854 /* ChatMessage.swift in Sources */,
 				4626BA9E229DB66B00505854 /* Int.swift in Sources */,
 				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,

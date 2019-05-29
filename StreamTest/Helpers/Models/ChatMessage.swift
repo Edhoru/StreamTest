@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Comment: Codable {
+struct ChatMessage: Codable {
     var id: String
     var authorDisplayName: String
     private var authorProfileImageUrl: String
