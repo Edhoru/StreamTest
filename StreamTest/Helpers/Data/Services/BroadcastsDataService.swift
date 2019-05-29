@@ -26,6 +26,14 @@ class BroadcastsDataService {
     
     
     func mapBroadcast(from data: Data) -> [Broadcast] {
+        print(data)
+        do {
+            let a = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            print(a)
+        } catch let e {
+            print(e)
+        }
+        
         do {
             let broadcasts = try JSONDecoder().decode([Broadcast].self, from: data)
             return broadcasts
