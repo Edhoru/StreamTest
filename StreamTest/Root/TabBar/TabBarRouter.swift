@@ -50,26 +50,25 @@ final class TabBarRouter: ViewableRouter<TabBarInteractable, TabBarViewControlla
         let stream = streamBuilder.build(withListener: interactor)
         attachChild(stream)
         
-        let searchViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_search"))
-        searchViewController.view.backgroundColor = .green
-        
-        let notificationsViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_notifications"))
-        notificationsViewController.view.backgroundColor = .blue
-        
-        let profileViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_profile"))
-        profileViewController.view.backgroundColor = .orange
-        
         guard let streamViewController = stream.viewControllable as? TabBarChildViewController/*,
              let searchViewController = search.viewControllable as? TabBarChildViewController,
              let notificationsViewController = notifications.viewControllable as? TabBarChildViewController,
-             let profileViewController = profile.viewControllable as? TabBarChildViewController */ else {
+             let profileViewController = profile.viewControllable as? TabBarChildViewController */
+            else {
                 fatalError("Children don't have the correct class")
         }
         
-        viewController.displayChildren([streamViewController,
-                                        searchViewController,
-                                        notificationsViewController,
-                                        profileViewController])
+        //This childs don't have implementation, so for now we are only going to show empty view
+        let searchViewController = SearchViewController(icon: #imageLiteral(resourceName: "icon_search"))
+        let notificationsViewController = NotificationsViewController(icon: #imageLiteral(resourceName: "icon_notifications"))
+        let profileViewController = ProfileViewController(icon: #imageLiteral(resourceName: "icon_profile"))
+        
+        let allChildren = [streamViewController,
+                           searchViewController,
+                           notificationsViewController,
+                           profileViewController]
+        
+        viewController.displayChildren(allChildren)
     }
     
 }

@@ -33,6 +33,13 @@
 		4626BAC2229ED1C200505854 /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC1229ED1C200505854 /* Pulsing.swift */; };
 		4626BAC5229EDD0800505854 /* Liking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC4229EDD0800505854 /* Liking.swift */; };
 		4626BAC8229EF3A200505854 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAC7229EF3A200505854 /* Notification.swift */; };
+		4626BAD3229F4C9700505854 /* empty-box.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BACB229F4C9600505854 /* empty-box.json */; };
+		4626BAD6229F4C9700505854 /* funky-chicken.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BACE229F4C9600505854 /* funky-chicken.json */; };
+		4626BAD9229F4C9700505854 /* no-notifications.json in Resources */ = {isa = PBXBuildFile; fileRef = 4626BAD1229F4C9700505854 /* no-notifications.json */; };
+		4626BADD229F4E8600505854 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BADC229F4E8600505854 /* EmptyView.swift */; };
+		4626BADF229F50A900505854 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BADE229F50A900505854 /* NotificationsViewController.swift */; };
+		4626BAE1229F591100505854 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAE0229F591100505854 /* ProfileViewController.swift */; };
+		4626BAE3229F592300505854 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626BAE2229F592300505854 /* SearchViewController.swift */; };
 		4667D0522293BA8300B67877 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04E2293BA8300B67877 /* RootRouter.swift */; };
 		4667D0532293BA8300B67877 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D04F2293BA8300B67877 /* RootViewController.swift */; };
 		4667D0542293BA8300B67877 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667D0502293BA8300B67877 /* RootBuilder.swift */; };
@@ -104,6 +111,13 @@
 		4626BAC1229ED1C200505854 /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		4626BAC4229EDD0800505854 /* Liking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liking.swift; sourceTree = "<group>"; };
 		4626BAC7229EF3A200505854 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		4626BACB229F4C9600505854 /* empty-box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-box.json"; sourceTree = "<group>"; };
+		4626BACE229F4C9600505854 /* funky-chicken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "funky-chicken.json"; sourceTree = "<group>"; };
+		4626BAD1229F4C9700505854 /* no-notifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-notifications.json"; sourceTree = "<group>"; };
+		4626BADC229F4E8600505854 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		4626BADE229F50A900505854 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		4626BAE0229F591100505854 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4626BAE2229F592300505854 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4667D04E2293BA8300B67877 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4667D04F2293BA8300B67877 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4667D0502293BA8300B67877 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
@@ -214,6 +228,7 @@
 			children = (
 				4626BAC1229ED1C200505854 /* Pulsing.swift */,
 				4626BAC4229EDD0800505854 /* Liking.swift */,
+				4626BACA229F4C8500505854 /* LottieFiles */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -221,8 +236,27 @@
 		4626BAC9229EF8F600505854 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				4626BADE229F50A900505854 /* NotificationsViewController.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		4626BACA229F4C8500505854 /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4626BACB229F4C9600505854 /* empty-box.json */,
+				4626BAD1229F4C9700505854 /* no-notifications.json */,
+				4626BACE229F4C9600505854 /* funky-chicken.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
+		4626BADB229F4E5F00505854 /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				4626BADC229F4E8600505854 /* EmptyView.swift */,
+			);
+			path = Empty;
 			sourceTree = "<group>";
 		};
 		4667D03F22939BE900B67877 /* Helpers */ = {
@@ -281,6 +315,7 @@
 		4667D0432293B98700B67877 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				4626BAE2229F592300505854 /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -288,6 +323,7 @@
 		4667D0452293B9A500B67877 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4626BAE0229F591100505854 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -441,6 +477,7 @@
 		4680D9432295B4B80064C026 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4626BADB229F4E5F00505854 /* Empty */,
 				4680D9442295B4D20064C026 /* TabBarChildViewController.swift */,
 				4626BA9B229DA1AC00505854 /* IconTextButton.swift */,
 				4626BABF229EB27200505854 /* LikeButton.swift */,
@@ -526,11 +563,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				466C72BF229B7FF600F3CC8A /* broadcasts.json in Resources */,
+				4626BAD9229F4C9700505854 /* no-notifications.json in Resources */,
 				461870A022938A9F008A2CD7 /* LaunchScreen.storyboard in Resources */,
 				466C72B02299A40800F3CC8A /* View.xib in Resources */,
+				4626BAD3229F4C9700505854 /* empty-box.json in Resources */,
 				4626BAA3229DC3A600505854 /* ads.json in Resources */,
 				4618709D22938A9F008A2CD7 /* Assets.xcassets in Resources */,
 				4626BAB7229E0EB000505854 /* comments.json in Resources */,
+				4626BAD6229F4C9700505854 /* funky-chicken.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +588,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-StreamTest/Pods-StreamTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -555,6 +596,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RIBs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -605,12 +647,15 @@
 				4626BABB229E0EEC00505854 /* CommentCollectionViewCell.swift in Sources */,
 				4626BA94229CD4CC00505854 /* LikesLeftView.swift in Sources */,
 				466C72B8229A51B100F3CC8A /* PlayerViewController.swift in Sources */,
+				4626BADF229F50A900505854 /* NotificationsViewController.swift in Sources */,
 				4626BABD229E261B00505854 /* NSAttributedString.swift in Sources */,
 				466C72C1229C563000F3CC8A /* Broadcast.swift in Sources */,
 				4626BAAD229DDCF900505854 /* ChatRouter.swift in Sources */,
 				466C72AE2299753C00F3CC8A /* BroadcastsDataService.swift in Sources */,
 				4667D05F2293BD8A00B67877 /* TabBarRouter.swift in Sources */,
+				4626BAE1229F591100505854 /* ProfileViewController.swift in Sources */,
 				4626BA96229CFF4C00505854 /* Date.swift in Sources */,
+				4626BADD229F4E8600505854 /* EmptyView.swift in Sources */,
 				466C72A422995A4D00F3CC8A /* SuggestionsRouter.swift in Sources */,
 				466C7297229959F900F3CC8A /* StreamInteractor.swift in Sources */,
 				466C72AA229971EB00F3CC8A /* SuggestionsCollectionViewCell.swift in Sources */,
@@ -625,6 +670,7 @@
 				466C72A522995A4D00F3CC8A /* SuggestionsViewController.swift in Sources */,
 				4680D9452295B4D20064C026 /* TabBarChildViewController.swift in Sources */,
 				4626BA92229CCA8700505854 /* BroadcastTitleView.swift in Sources */,
+				4626BAE3229F592300505854 /* SearchViewController.swift in Sources */,
 				466C7294229959F900F3CC8A /* StreamRouter.swift in Sources */,
 				466C72BA229A51B100F3CC8A /* PlayerInteractor.swift in Sources */,
 				4667D0572293BAB700B67877 /* AppComponent.swift in Sources */,

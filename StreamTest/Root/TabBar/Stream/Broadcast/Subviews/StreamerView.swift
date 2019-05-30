@@ -144,11 +144,11 @@ class StreamerView: UIView {
     //Actions
     
     @objc func shareAction() {
-        
+        print("shareAction()")
     }
     
     @objc func commentsAction() {
-        
+        print("commentsAction()")
     }
     
     @objc func likeAction() {

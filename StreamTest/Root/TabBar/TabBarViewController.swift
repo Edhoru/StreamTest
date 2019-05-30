@@ -19,12 +19,11 @@ protocol TabBarPresentableListener: class {
 final class TabBarViewController: UITabBarController, TabBarPresentable {
     
     weak var listener: TabBarPresentableListener?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-//        setupControllers()
     }
     
     private func setupUI() {
@@ -32,41 +31,6 @@ final class TabBarViewController: UITabBarController, TabBarPresentable {
         
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = UIImage()
-    }
-    
-    private func setupControllers() {
-        let streamViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_stream"))
-        streamViewController.view.backgroundColor = .red
-        
-        let searchViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_search"))
-        searchViewController.view.backgroundColor = .green
-        
-        let notificationsViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_notifications"))
-        notificationsViewController.view.backgroundColor = .blue
-        
-        let profileViewController = TabBarChildViewController(icon: #imageLiteral(resourceName: "icon_profile"))
-        profileViewController.view.backgroundColor = .orange
-        
-        viewControllers = [streamViewController,
-                           searchViewController,
-                           notificationsViewController,
-                           profileViewController]
-        
-        
-        guard let tabBarChildren = children as? [TabBarChildViewController] else {
-            return
-        }
-        
-        let customTabBar = StreamTabBar(children: tabBarChildren)
-        customTabBar.delegate = self
-        view.addSubview(customTabBar)
-        
-        NSLayoutConstraint.activate([
-            customTabBar.topAnchor.constraint(equalTo: tabBar.topAnchor),
-            customTabBar.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
-            customTabBar.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-            customTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            ])
     }
     
 }
