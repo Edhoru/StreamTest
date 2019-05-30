@@ -8,7 +8,7 @@
             "favorite" : true,
             "followers" : 8900,
             "following" : false,
-            "likes" : 101000,
+            "likes" : 101,
             "name" : "Ninja"
         },
         "stream" : {
@@ -30,7 +30,7 @@
             "favorite" : false,
             "followers" : 8500,
             "following" : false,
-            "likes" : 25000,
+            "likes" : 25,
             "name" : "Pokimane"
         },
         "stream" : {
@@ -48,11 +48,11 @@
         "streamer" : {
             "id" : "UCNF0LEQ2abMr0PAX3cfkAMg",
             "avatar" : "https://yt3.ggpht.com/a/AGF-l79yosB52QYhIH17R3J8A_aEf49ybSq8T2dD1w=s288-mo-c-c0xffffffff-rj-k-no",
-            "badge" : 5,
+            "badge" : 0,
             "favorite" : false,
             "followers" : 1900,
             "following" : false,
-            "likes" : 1700,
+            "likes" : 17,
             "name" : "DrLupo"
         },
         "stream" : {
@@ -70,11 +70,11 @@
         "streamer" : {
             "id" : "UC0ZAJJviXm5Pqx7d8OsRLHw",
             "avatar" : "https://i.ytimg.com/vi/EXh0qU4eQHM/default.jpg",
-            "badge" : 5,
+            "badge" : 1,
             "favorite" : false,
             "followers" : 9100,
             "following" : false,
-            "likes" : 1700,
+            "likes" : 86,
             "name" : "LAZY GAMER"
         },
         "stream" : {
@@ -92,11 +92,11 @@
         "streamer" : {
             "id" : "UCd-S8xYZkVU_85tX685MW0g",
             "avatar" : "https://i.ytimg.com/vi/_lYgNStv7Fs/default.jpg",
-            "badge" : 5,
+            "badge" : 0,
             "favorite" : false,
             "followers" : 2100,
             "following" : false,
-            "likes" : 1700,
+            "likes" : 65,
             "name" : "Fortnite Gaming"
         },
         "stream" : {
@@ -114,11 +114,11 @@
         "streamer" : {
             "id" : "UChzFlgz1JzZILl_9LCmonOg",
             "avatar" : "https://i.ytimg.com/vi/6YXX_u0t8qQ/default.jpg",
-            "badge" : 5,
+            "badge" : 0,
             "favorite" : false,
             "followers" : 5600,
             "following" : false,
-            "likes" : 1700,
+            "likes" : 29,
             "name" : "Beast gamer Live"
         },
         "stream" : {
@@ -136,11 +136,11 @@
         "streamer" : {
             "id" : "UCL9zu0FQ5XAwwTfIGdW1rHg",
             "avatar" : "https://i.ytimg.com/vi/LvLqq459iDw/default.jpg",
-            "badge" : 5,
+            "badge" : 2,
             "favorite" : false,
             "followers" : 2100,
             "following" : false,
-            "likes" : 1700,
+            "likes" : 58,
             "name" : "Keyur gaming"
         },
         "stream" : {

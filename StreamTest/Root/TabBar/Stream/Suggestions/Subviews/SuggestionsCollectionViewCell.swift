@@ -103,25 +103,31 @@ class SuggestionsCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(_ broadcast: Broadcast, layout: Layout) {
+        self.broadcast = broadcast
+        
         backgroundColor = .background
         
         stateSize = self.bounds.width - (Constants.stateXSpace * 2)
         
         stateCircleView.layer.cornerRadius = stateSize / 2
         avatarImageView.layer.cornerRadius = (self.bounds.width - (Constants.avatarXSpace * 2)) / 2
+        setupAvatar(with: broadcast.streamer.avatar)        
+        
+        nameLabel.text = broadcast.streamer.name
+        nameLabel.textColor = broadcast.stream.state == .none ? .darkGray : broadcast.stream.state == .live ? .gray : .secondary
+        
         
         badgeLabel.layer.cornerRadius = (stateSize / 3) / 2
         if layout == .small {
             badgeLabel.styleBadge(size: 12)
-        }        
-        
-        setupAvatar(with: broadcast.streamer.avatar)
-        self.broadcast = broadcast
-        
-        nameLabel.text = broadcast.streamer.name
-        nameLabel.textColor = broadcast.stream.state == .none ? .darkGray : broadcast.stream.state == .live ? .gray : .secondary
-        badgeLabel.text = broadcast.stream.state == .upcoming ? "" : "\(broadcast.streamer.badge)"
-        badgeLabel.backgroundColor = broadcast.stream.state == .upcoming ? .secondary : .badge
+        }
+        if broadcast.stream.state == .upcoming {
+            badgeLabel.text = ""
+        } else if broadcast.streamer.badge > 0 {
+            badgeLabel.text = "\(broadcast.streamer.badge)"
+        } else {
+            badgeLabel.isHidden = true
+        }
         
         setStateView()
     }
