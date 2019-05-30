@@ -60,6 +60,10 @@ extension PlayerViewController: PlayerViewControllable {
         
         webView = nil
         
+        view.subviews.forEach { (subview) in
+            subview.removeFromSuperview()
+        }        
+        
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.allowsInlineMediaPlayback = true
         

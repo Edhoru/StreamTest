@@ -47,13 +47,11 @@ class StreamerView: UIView {
     
     var shareButton: IconTextButton = {
         let button = IconTextButton(kind: .share, title: nil)
-        button.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         return button
     }()
     
     var commentsButton: IconTextButton = {
         let button = IconTextButton(kind: .comments, title: nil)
-        button.addTarget(self, action: #selector(commentsAction), for: .touchUpInside)
         return button
     }()
     
@@ -65,7 +63,6 @@ class StreamerView: UIView {
         button.imageView?.tintColor = .on
         button.layer.cornerRadius = 28
         button.clipsToBounds = true
-        button.addTarget(self, action: #selector(likeAction), for: .touchDown)
         return button
     }()
     
@@ -80,6 +77,10 @@ class StreamerView: UIView {
     
     func setup(streamer: Streamer, messageCount: Int) {
         backgroundColor = .background
+        
+        shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
+        commentsButton.addTarget(self, action: #selector(commentsAction), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeAction), for: .touchDown)
         
         likesGiven = 0
         nameLabel.text = streamer.name
