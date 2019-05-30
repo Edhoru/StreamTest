@@ -15,4 +15,9 @@ extension UserDefaults {
         set { set(newValue, forKey: #function) }
     }
     
+    var likesGiven: [String : Int] {
+        get { return value(forKey: #function) as? [String : Int] ?? [:] }
+        set { set(newValue, forKey: #function) }
+    }
+    
 }

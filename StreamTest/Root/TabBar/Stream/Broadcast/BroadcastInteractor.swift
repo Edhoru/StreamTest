@@ -39,7 +39,7 @@ final class BroadcastInteractor: PresentableInteractor<BroadcastPresentable>, Br
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
-        NotificationCenter.default.addObserver(self, selector: #selector(likeLogic), name: .videoLiked, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(likeLogic(_:)), name: .videoLiked, object: nil)
     }
 
     override func willResignActive() {
@@ -48,8 +48,17 @@ final class BroadcastInteractor: PresentableInteractor<BroadcastPresentable>, Br
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc private func likeLogic() {
+    @objc private func likeLogic(_ notification: Notification) {
+        guard let streamer = notification.object as? Streamer else { return }
+        
+        //Reduce the number of available likes
         UserDefaults.standard.likesToGive -= 1
+        
+        //Store the number of extra likes given to a streamer
+        var likesGiven = UserDefaults.standard.likesGiven
+        likesGiven[streamer.id] = (likesGiven[streamer.id] ?? 0) + 1
+        UserDefaults.standard.likesGiven = likesGiven
+        
         presenter.updateLikeCount()
     }
 }

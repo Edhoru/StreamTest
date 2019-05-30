@@ -17,8 +17,7 @@ class StreamerView: UIView {
         static let space: CGFloat = 6
         static let state: CGFloat = 49
     }
-    
-    var likesGiven: Int = 0
+    var streamer: Streamer?
     
     //UI
     var avatarImageView: UIImageView = {
@@ -78,15 +77,16 @@ class StreamerView: UIView {
     func setup(streamer: Streamer, messageCount: Int) {
         backgroundColor = .background
         
+        self.streamer = streamer
+        
         shareButton.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         commentsButton.addTarget(self, action: #selector(commentsAction), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(likeAction), for: .touchDown)
         
-        likesGiven = 0
         nameLabel.text = streamer.name
         followersLabel.text = "\(streamer.followers.abbreviate()) followers"
         commentsButton.custom(title: "\(messageCount)")
-        likeLabel.text = "\(streamer.likes.abbreviate())"
+        displayLikes()
         
         addSubview(avatarImageView)
         addSubview(nameLabel)
@@ -142,6 +142,18 @@ class StreamerView: UIView {
         }
     }
     
+    func displayLikes() {
+        guard let streamer = self.streamer else {
+            likeLabel.text = "0"
+            return
+        }
+        
+        let likesFromJSON = streamer.likes
+        let likesGiven = UserDefaults.standard.likesGiven[streamer.id] ?? 0
+        let totalLikes = likesFromJSON + likesGiven
+        likeLabel.text = "\(totalLikes.abbreviate())"
+    }
+    
     //Actions
     
     @objc func shareAction() {
@@ -153,16 +165,17 @@ class StreamerView: UIView {
     }
     
     @objc func likeAction() {
-        guard UserDefaults.standard.likesToGive > 0 else { return }
+        guard UserDefaults.standard.likesToGive > 0,
+        let streamer = self.streamer else { return }
         
-        NotificationCenter.default.post(name: .videoLiked, object: nil)
+        NotificationCenter.default.post(name: .videoLiked, object: streamer)
         
         let pulse = Pulsing(numberOfPulses: 1, radius: 120, position: likeButton.center)
         pulse.animationDuration = 0.8
         
         layer.insertSublayer(pulse, below: likeButton.layer)
         
-        likesGiven += 1
+        let likesGiven = UserDefaults.standard.likesGiven[streamer.id] ?? 0
         let liking = Liking(radius: likeButton.bounds.width / 2, position: likeButton.center, text: "\(likesGiven)")
         liking.animationDuration = 1.5
         

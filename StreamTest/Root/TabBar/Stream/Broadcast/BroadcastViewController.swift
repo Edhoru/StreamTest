@@ -50,6 +50,7 @@ extension BroadcastViewController: BroadcastPresentable {
     
     func updateLikeCount() {
         titleView.likesLeftView.display()
+        streamerView.displayLikes()
     }
 }
 
