@@ -77,7 +77,6 @@ class EmptyView: UIView {
         
         let animation = Animation.named(kind.info.file)
         animationView.animation = animation
-        animationView.play()
         
         messageLabel.text = kind.info.message
     }
@@ -86,9 +85,14 @@ class EmptyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func stopAnimation() {
-        animationView.stop()
+    
+    //Toggle the animation when the view appears or disappear
+    func animation(play: Bool) {
+        if play == true {
+            animationView.play()
+        } else {
+            animationView.stop()
+        }
     }
     
 }
-

@@ -30,10 +30,16 @@ class TabBarChildViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emptyView?.animation(play: true)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        emptyView?.stopAnimation()
+        emptyView?.animation(play: false)
     }
     
     func addEmptyView(kind: EmptyView.Kind) {
