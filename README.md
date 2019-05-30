@@ -29,7 +29,9 @@ To reset the likes count just tap the "likes view" in the section above the vide
 
 The video's information is real from YouTube API V3, it is stored locally to avoid issues with YT limits while testing. The chat data is the same for all videos just to serve as a placeholder.
 
-The app includes commented out code that shows how to get the info from YI API.
+The app includes commented out code that shows how to get the info from YT API.
+
+Since the video urls are set locally, they may get blocked or deleted from YT.
 
 
 ### Video
